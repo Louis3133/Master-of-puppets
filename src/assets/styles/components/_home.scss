@@ -1,0 +1,6 @@
+@use '../config' as *;
+
+.test {
+  font-family: $font-family-texts;
+  color: $yellow;
+}
