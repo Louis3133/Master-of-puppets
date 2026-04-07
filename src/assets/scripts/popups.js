@@ -48,7 +48,6 @@ popupButton.addEventListener('click', () => {
 
     Draggable.create(popup, {
       bounds: "body",
-      handle: ".popup-navigation"
     });
   }
 });
