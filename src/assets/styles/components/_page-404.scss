@@ -1,0 +1,132 @@
+@use '../config' as *;
+
+
+.page-404 {
+  background: $dark-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content-404 {
+  background: url(/images/ticket-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-inline: 115px;
+  padding-block: 65px 89px;
+  border-radius: 24px;
+  position: relative;
+  transform: rotate(-2.577deg);
+
+  p {
+    margin: unset;
+  }
+
+  .error-title {
+    color: $dark-blue;
+    font-family: $font-family-texts;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: unset;
+  }
+
+  .logo-404 {
+    width: 145px;
+    height: 72px;
+    margin-bottom: 25px;
+  }
+
+  &:before{
+    content: '';
+    width: 183px;
+    height: 183px;
+    background-color: $dark-blue;
+    position: absolute;
+    left: -112px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+  }
+
+    &:after{
+    content: '';
+    width: 183px;
+    height: 183px;
+    background-color: $dark-blue;
+    position: absolute;
+    right: -112px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+  }
+
+  .suptitle-404 {
+    color: $blue;
+    font-family: $font-family-texts;
+    font-weight: 700;
+    font-size: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 3px solid $blue;
+    text-transform: uppercase;
+    display: flex;
+  }
+
+  .initial-price-404 {
+    color: $dark-blue;
+    font-family: $font-family-texts;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    span {
+      color: #0707D9;
+      font-family: $font-family-texts;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-decoration:line-through;
+    }
+  }
+
+  .error-description {
+    color: $dark-blue;
+    font-family: $font-family-texts;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 12px;
+  }
+
+  .main-content-404 {
+    border-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: solid $dark-blue 2px;
+  }
+}
+
+  .back-button-404 {
+    display: flex;
+    padding: 20px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    background: $yellow;
+    width: fit-content;
+    color: $dark-blue;
+    font-family: $font-family-texts;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    margin-inline: auto;
+    margin-top: 62px;
+  }
