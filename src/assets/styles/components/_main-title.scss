@@ -1,14 +1,18 @@
 @use '../config' as *;
 
+body{
+    overflow-x: hidden;
+}
+
 .title-section {
   display: flex;
   position: relative;
   height: 100vh;
 
   .main-title {
+    width: 50%;
     display: flex;
     margin-inline: auto;
-    margin-block: auto;
   }
 
   .hands-container {
@@ -18,6 +22,7 @@
     z-index: -1;
     top: 0;
     width: 100%;
+    height: 100vh;
     justify-content: space-between;
   }
 }
