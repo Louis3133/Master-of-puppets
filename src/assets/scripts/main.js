@@ -1,1 +1,5 @@
 import '../styles/main.scss'
+import './popups.js'
+import './puppets.js'
+import './hellwebsite.js'
+import './documents.js'
