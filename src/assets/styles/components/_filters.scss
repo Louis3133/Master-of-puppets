@@ -102,4 +102,20 @@ $transition-speed: 0.3s;
     display: flex;
     gap: 15px;
 }
+
+#navbarInterne {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: $font-family-texts;
+    font-weight: bold;
+    color: $dark;
+
+    #panierAchat {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        cursor: pointer;
+}
+}
 }
