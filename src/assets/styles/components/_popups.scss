@@ -1,6 +1,7 @@
 @use '../config' as *;
 
-.popup-exemple {
+.popup {
   background-color: white;
   padding: 20px;
+  position: absolute;
 }

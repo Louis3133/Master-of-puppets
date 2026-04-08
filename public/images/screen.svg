@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.92 312.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #d2d2e2;
+      }
+    </style>
+  </defs>
+  <g id="_Écran" data-name="Écran">
+    <polygon class="cls-2" points="14.33 10.19 34.92 43.63 34.92 285.32 14.33 306.11 14.33 10.19"/>
+    <rect class="cls-1" x="-146.65" y="146.65" width="312.7" height="19.41" transform="translate(-146.65 166.06) rotate(-90)"/>
+  </g>
+</svg>

@@ -1,1 +1,257 @@
 @use '../config' as *;
+
+.board-section {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/images/board-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-content {
+  height: 100%;
+  width: 100%;
+  background-image:   url(/images/walls.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  .door {
+    height: 165px;
+    width: 44px;
+    position: absolute;
+    left: 20px;
+    top: 11%;
+  }
+
+  .chest {
+    width: 173px;
+    height: 100px;
+    background: unset;
+    border: unset;
+    position: absolute;
+    left: 15%;
+    top: 20px;
+  }
+
+  .desk {
+    width: 335px;
+    height: 165px;
+    position: absolute;
+    right: 80px;
+    top: 60px;
+    background-image: url(/images/desk.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .button-popups {
+      width: 80px;
+      height: 95px;
+      left: 20px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .computer {
+      width: 95px;
+      height: 75px;
+      position: absolute;
+      right: 55px;
+      top: 50px;
+      cursor: pointer;
+    }
+  }
+
+  .screen {
+    width: 35px;
+    height: 315px;
+    position: absolute;
+    left: 10px;
+    top: 35%;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .projector {
+    height: 115px;
+    width: 90px;
+    position: absolute;
+    left: 270px;
+    top: 44%;
+
+    background-image: url('/images/projector.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .halo::before {
+    content: '';
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    right: 80px;
+    bottom: -85px;
+    background-image: url('/images/halo.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+    animation: flicker 0.30s infinite;
+    pointer-events: none;
+  }
+
+
+  @keyframes flicker {
+    0%   { opacity: 0.15; transform: scale(1); }
+    20%  { opacity: 0.25; transform: scale(1.02); }
+    40%  { opacity: 0.1;  transform: scale(0.98); }
+    60%  { opacity: 0.3;  transform: scale(1.01); }
+    80%  { opacity: 0.18; transform: scale(1); }
+    100% { opacity: 0.22; transform: scale(1.02); }
+  }
+}
+
+.window {
+  width: 80%;
+  height: 80%;
+  background: white;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  right: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  &.hidden {
+    display: none;
+  }
+
+  .window-nav {
+    height: 30px;
+    width: 100%;
+    background: #1D2327;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    align-items: center;
+  }
+
+  .window-close {
+    background: unset;
+    border: unset;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+  }
+}
+
+.board-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: auto;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  right: 50%;
+  left: 50%;
+
+  .table {
+    width: 630px;
+    height: 655px;
+  }
+
+  .heads {
+  position: absolute;
+  inset: 0;
+
+  .head {
+    position: absolute;
+
+    &:nth-child(1) {
+      top: -5px;
+      right: -55px;
+    }
+
+    &:nth-child(2) {
+      top: 120px;
+      right: -320px;
+    }
+
+    &:nth-child(3) {
+      top: 410px;
+      right: -300px;
+    }
+
+    &:nth-child(4) {
+      bottom: -20px;
+      right: -70px;
+    }
+
+    &:nth-child(5) {
+      bottom: 135px;
+      left: -295px;
+    }
+
+    &:nth-child(6) {
+      top: 140px;
+      left: -320px;
+    }
+  }
+}
+
+  .document {
+    width: 60px;
+    height: 65px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(/images/document.svg);
+    background-color: unset;
+    border: unset;
+    position: absolute;
+    cursor: pointer;
+
+    &:nth-child(2) {
+      top: 160px;
+      right: -50px;
+      transform: rotate(180deg);
+    }
+
+    &:nth-child(3) {
+      top: 235px;
+      right: -200px;
+      transform: rotate(230deg);
+    }
+
+    &:nth-child(4) {
+      top: 360px;
+      right: -210px;
+      transform: rotate(-55deg);
+    }
+
+    &:nth-child(5) {
+      bottom: 150px;
+      right: -70px;
+    }
+
+    &:nth-child(6) {
+      bottom: 225px;
+      left: -135px;
+      transform: rotate(60deg);
+    }
+
+    &:nth-child(7) {
+      top: 225px;
+      left: -165px;
+      transform: rotate(120deg);
+    }
+  }
+}

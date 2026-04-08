@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,54 +8,92 @@
 </head>
 <script type="module" src="/src/assets/scripts/main.js"></script>
 
+
 <body>
-  <div class="popup-exemple-1 popup">
-    <div class="popup-nav">
-      <button>x</button>
-    </div>
-    Popup pas maquetté
-  </div>
-
-
-  <div class="popup-exemple-2 popup">
-    <div class="popup-nav">
-      <button>x</button>
-    </div>
-    Popup 2 pas maquetté
-  </div>
-
-
-  <div class="popup-exemple-3 popup">
-    <div class="popup-nav">
-      <button>x</button>
-    </div>
-    Popup 3 pas maquetté
-  </div>
-
-  <div class="popup-exemple-4 popup">
-    <div class="popup-nav">
-      <button>x</button>
-    </div>
-    Popup 4 pas maquetté
-  </div>
-
-
-
   <section id="title-section" class="title-section">
-    <div id="popupButton">sdfdf</div>
     <div class="hands-container">
       <img class="left-hand" src="/images/left-hand.svg">
       <img class="right-hand" src="/images/right-hand.svg">
     </div>
     <img class="main-title" src="/images/main-title.svg" alt="Masters of puppets">
+    <a class="to-board" href="#board-section">Aller vers le board</a>
   </section>
 
 
   <section id="board-section" class="board-section">
-    <div class="board-table">
+    <div class="board-content">
+      <a aria-label="Back to the main title" href="#title-section" class="door"></a>
+      <div class="desk">
+        <img id="popupButton" class="button-popups" src="/images/button.svg">
+        <img id="open-website" class="computer" src="/images/computer.svg">
+      </div>
+      <img class="screen" src="/images/screen.svg">
+      <div class="projector halo"></div>
+
+      <button class="chest"><img src="/images/chest.svg"></button>
+
+      <div class="board-table">
+        <img class="table" src="/images/evil-board.png">
+        <button class="document"></button>
+        <button class="document"></button>
+        <button class="document"></button>
+        <button class="document"></button>
+        <button class="document"></button>
+        <button class="document"></button>
+        <div class="heads">
+          <img class="head" src="/images/head-1.svg">
+          <img class="head" src="/images/head-2.svg">
+          <img class="head" src="/images/head-3.svg">
+          <img class="head" src="/images/head-4.svg">
+          <img class="head" src="/images/head-5.svg">
+          <img class="head" src="/images/head-6.svg">
+        </div>
+      </div>
+
+      <div id="window-website" class="window hidden">
+        <div class="window-nav">
+          <button id="close-website" class="window-close"><img src="/images/close-window.svg"></button>
+        </div>
+        sdfsfsf
+      </div>
+
+      <div id="documents-section" class="documents-folder hidden">
+        <div class="folder-wrapper" id="main-folder">
+
+          <div id="cover-layer">
+            <div class="title-section-folder">
+              <p>Monsieur gros méchant</p>
+              <h2>Perception de l'acheteur</h2>
+              <p>Gros méchant corp</p>
+            </div>
+
+            <p class="top-secret">top secret</p>
+          </div>
+
+
+          <div class="page page-left" id="left-content">
+            <button id="prev-page">page précédente</button>
+          </div>
+
+          <div class="page page-right" id="right-content">
+            <button id="next-page">page suivante</button>
+          </div>
+
+        </div>
+      </div>
 
     </div>
+
   </section>
 
+
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
+  <script src="https://assets.codepen.io/16327/InertiaPlugin.min.js"></script>
+
+
+
+
 </body>
+
 </html>
