@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
 
     // biais autorité
 
@@ -189,5 +189,3 @@ document.addEventListener("DOMContentLoaded", () => {
             checkbox.dispatchEvent(new Event('click'));
         });
     });
-
-});

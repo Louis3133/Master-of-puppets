@@ -34,7 +34,7 @@ cover.addEventListener('click', () => {
     isAnimating = false;
     folder.classList.add('is-open');
   }});
-  
+
   tl.to(folder, { width: 800, duration: 0.6, ease: "power2.inOut" }, 0)
     .to(leftPageEl, { opacity: 1, duration: 0.3 }, 0.2)
     .to(cover, { rotationY: -180, duration: 0.6, ease: "power2.inOut" }, 0);
@@ -65,7 +65,7 @@ nextBtn.addEventListener('click', (e) => {
     prevBtn.style.display = "block";
 
     gsap.to(flipPage, {
-      rotationY: -180, 
+      rotationY: -180,
       duration: 1,
       ease: "power2.inOut",
       onUpdate: function() {
@@ -83,7 +83,7 @@ nextBtn.addEventListener('click', (e) => {
 
     isAnimating = true;
     folder.classList.remove('is-open');
-    
+
     const tl = gsap.timeline({ onComplete: () => {
       isAnimating = false;
       currentIndex = 0;
@@ -119,7 +119,7 @@ prevBtn.addEventListener('click', (e) => {
   nextBtn.textContent = "page suivante";
 
   gsap.to(flipPage, {
-    rotationY: 180, 
+    rotationY: 180,
     duration: 0.7,
     ease: "power2.inOut",
     onUpdate: function() {
