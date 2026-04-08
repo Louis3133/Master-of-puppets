@@ -49,3 +49,56 @@ body{
     width: fit-content;
   }
 }
+
+/* Animation générique */
+@keyframes floatY {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-15px); }
+}
+
+@keyframes rotateSmall {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(7deg); }
+}
+
+@keyframes rotateTiny {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(3deg); }
+}
+
+@keyframes diagonal {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(15px, -15px); }
+}
+
+/* Elements */
+
+.test {
+  animation: floatY 2s ease-in-out infinite alternate;
+  animation-delay: 0s;
+}
+
+.test-2 {
+  transform-origin: 20% 20%;
+  animation: rotateSmall 3s ease-in-out infinite alternate;
+  animation-delay: 0.5s;
+}
+
+.test-3 {
+  animation: rotateTiny 2.5s ease-in-out infinite alternate;
+  animation-delay: 1s;
+}
+
+.test-4 {
+  animation: diagonal 3s ease-in-out infinite alternate;
+  animation-delay: 1.5s;
+}
+
+.test-5 {
+  animation: rotateTiny 2.8s ease-in-out infinite alternate;
+  animation-delay: 2s;
+}
+
+.left-hand, .right-hand {
+  will-change: transform;
+}
