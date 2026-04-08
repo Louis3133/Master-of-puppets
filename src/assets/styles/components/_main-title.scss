@@ -6,8 +6,12 @@ body{
 
 .title-section {
   display: flex;
+  flex-direction: column;
   position: relative;
+  gap: 100px;
   height: 100vh;
+  justify-content: center;
+  margin-top: 100px;
 
   .main-title {
     width: 50%;
@@ -24,5 +28,24 @@ body{
     width: 100%;
     height: 100vh;
     justify-content: space-between;
+  }
+
+  .to-board {
+    align-items: center;
+    background: $yellow;
+    border-radius: 10px;
+    color: $dark-blue;
+    display: flex;
+    font-family: $font-family-texts;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    gap: 16px;
+    justify-content: center;
+    line-height: normal;
+    margin-inline: auto;
+    padding: 12px 24px;
+    text-decoration: none;
+    width: fit-content;
   }
 }

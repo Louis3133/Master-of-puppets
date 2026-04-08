@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260.3 258.12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: .5;
+      }
+    </style>
+  </defs>
+  <g id="Lumière_projecteur" data-name="Lumière projecteur">
+    <polygon class="cls-1" points="0 258.12 260.3 141.77 260.3 122.62 0 0 0 258.12"/>
+  </g>
+</svg>

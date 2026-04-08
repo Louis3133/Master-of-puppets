@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 82.29 99.86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6d6e97;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #c9c9da;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        font-family: SatoshiVariable-Bold, 'Satoshi Variable';
+        font-size: 9.39px;
+        font-variation-settings: 'wght' 900;
+        font-weight: 700;
+      }
+
+      .cls-4, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        filter: url(#drop-shadow-1);
+        stroke: #81829d;
+      }
+
+      .cls-5 {
+        fill: #c3c3d3;
+      }
+
+      .cls-6 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-9 {
+        letter-spacing: .01em;
+      }
+    </style>
+    <filter id="drop-shadow-1" x="13.05" y="0" width="55" height="55" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="3"/>
+      <feFlood flood-color="#000" flood-opacity=".25"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Bouton">
+    <rect class="cls-1" y="62.66" width="82.29" height="37.21" rx="1.82" ry="1.82"/>
+    <ellipse class="cls-5" cx="40.91" cy="27.32" rx="25.11" ry="25.21"/>
+    <ellipse class="cls-3" cx="40.91" cy="27.32" rx="17.47" ry="17.55"/>
+    <text class="cls-4" transform="translate(10.69 79.45)"><tspan x="0" y="0">NE SU</tspan><tspan class="cls-8" x="28.34" y="0">R</tspan><tspan class="cls-7" x="34.71" y="0">T</tspan><tspan x="40.27" y="0">OUT</tspan><tspan class="cls-6" x="-.89" y="11.27">P</tspan><tspan x="4.83" y="11.27">AS PRE</tspan><tspan class="cls-9" x="37.91" y="11.27">S</tspan><tspan x="43.73" y="11.27">SER</tspan></text>
+    <polygon class="cls-2" points="4.2 64.51 2.59 64.51 1.79 65.91 2.59 67.3 4.2 67.3 5 65.91 4.2 64.51"/>
+    <polygon class="cls-2" points="79.69 64.53 78.09 64.53 77.29 65.93 78.09 67.32 79.69 67.32 80.5 65.93 79.69 64.53"/>
+    <polygon class="cls-2" points="4.2 95.22 2.59 95.22 1.79 96.62 2.59 98.01 4.2 98.01 5 96.62 4.2 95.22"/>
+    <polygon class="cls-2" points="79.69 95.24 78.09 95.24 77.29 96.64 78.09 98.03 79.69 98.03 80.5 96.64 79.69 95.24"/>
+  </g>
+</svg>
