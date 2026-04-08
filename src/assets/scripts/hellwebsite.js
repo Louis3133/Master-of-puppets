@@ -171,6 +171,22 @@
         }
     });
 
+    // menu déroulant
+
+    const boutonMenuDeroulant = document.getElementById("boutonMenuDeroulant");
+    const menuDeroulantContenue = document.getElementById("menuDeroulantContenue");
+    const imageBoutonFleche = boutonMenuDeroulant.querySelector("img");
+
+    boutonMenuDeroulant.addEventListener("click", () => {
+        menuDeroulantContenue.classList.toggle('visible');
+        boutonMenuDeroulant.classList.toggle('active');
+    });
+
+    addEventListener('keypress', (deroule) => {
+        if (deroule.key === 'Enter') {
+            menuDeroulantContenue.classList.toggle('visible');
+            boutonMenuDeroulant.classList.toggle('active');
+        }});
 
 
     // activer/désactiver tout

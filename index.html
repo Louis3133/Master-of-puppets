@@ -50,28 +50,19 @@
         </div>
       </div>
 
-      <div id="window-website" class="window hidden">
+       <div id="window-website" class="window hidden">
         <div class="window-nav">
           <button id="close-website" class="window-close"><img src="/images/close-window.svg"></button>
         </div>
-          <button id="enableAll">Activer tout</button>
-          <button id="disableAll">Désactiver tout</button>
-
         <div>
-          <input id="autorite" type="checkbox">
-          <label> Biais d'Autorité</label>
-          <img id="autorite_img" src="" alt="Lorem Ipsum">
-        </div>
-        <div>
-          <input id="stress" type="checkbox">
-          <label> Biais de Stress</label>
+          <div>
+            <img id="autorite_img" src="" alt="Lorem Ipsum">
+          </div>
           <div id="countdown" style="display: none;">
             00:00:00
           </div>
         </div>
         <div>
-          <input id="honnete" type="checkbox">
-          <label> Filtre d'Honnêteté</label>
           <p>Description produit de manière générale</p>
           <div class="negatif" style="display: block;">
             <ul>
@@ -83,9 +74,7 @@
           </div>
         </div>
         <div>
-          <input id="fomo" type="checkbox">
-          <label> Biais du FOMO</label>
-          <p class="fomoText" style="display: none;">
+            <p class="fomoText" style="display: none;">
             Il ne reste que <span class="stockCount">3</span> produits en stock !
           </p>
           <p class="fomoText" style="display: none;">
@@ -93,8 +82,6 @@
           </p>
         </div>
         <div>
-          <input id="reciprocite" type="checkbox">
-          <label> Biais de Réciprocité</label>
           <button id="panier"><img src="" alt="panier achat"></button>
           <li id="contenuePanier" style="display: none;">
             <ul>Produit 1 : <span class="prixArrondi" data-prix="20.00">16.00€</span></ul>
@@ -104,21 +91,58 @@
           </li>
         </div>
         <div>
-          <input id="ancrage" type="checkbox">
-          <label> Biais d'Ancrage</label>
-        </div>
-        <div>
-          <input id="gambler" type="checkbox">
-          <label> Gambler Addict </label>
-          <!-- besoin de scss -->
-        </div>
-        <div>
-          <input id="misdirection_esthetique" type="checkbox">
-          <label> Misdirection Esthétique </label>
           <button class="confirmer" data-set="S'abonner">S'abonner</button>
           <button class="annuler" data-set="Non merci">Non merci</button>
           <button class="confirmer" data-set="Je m'inscris">Je m'inscris</button>
           <button class="annuler" data-set="Je ne m'inscris pas">Je ne m'inscris pas</button>
+        </div>
+        <div id="menuDeroulant">
+          <button id="boutonMenuDeroulant"><img src="public/images/flecheHaut.svg" alt="bouton menu déroulant"></button>
+          <div id="menuDeroulantContenue">
+            <h2>Filtres</h2>
+            <button id="enableAll">Activer tout</button>
+            <button id="disableAll">Désactiver tout</button>
+            <div id="ligneCheckbox">
+              <div id="premiereColonneCheckBox">
+                <div class="menuDeroulantCheckbox">
+                  <input id="autorite" type="checkbox">
+                  <label for="autorite"> Biais d'Autorité</label>
+                </div>
+                <div class="menuDeroulantCheckbox">
+                  <input id="stress" type="checkbox">
+                  <label for="stress"> Biais de Stress</label>
+                </div>
+                <div class="menuDeroulantCheckbox">
+                  <input id="honnete" type="checkbox">
+                  <label for="honnete"> Filtre d'Honnêteté</label>
+                </div>
+              </div>
+              <div id="deuxiemeColonneCheckBox">
+                <div class="menuDeroulantCheckbox">
+                  <input id="fomo" type="checkbox">
+                  <label for="fomo"> Biais du FOMO</label>
+                </div>
+                <div class="menuDeroulantCheckbox">
+                  <input id="reciprocite" type="checkbox">
+                  <label for="reciprocite"> Biais de Réciprocité</label>
+                </div>
+                <div class="menuDeroulantCheckbox">
+                  <input id="ancrage" type="checkbox">
+                  <label for="ancrage"> Biais d'Ancrage</label>
+                </div>
+              </div>
+              <div id="troisiemeColonneCheckBox">
+                <div class="menuDeroulantCheckbox">
+                  <input id="gambler" type="checkbox">
+                  <label for="gambler"> Gambler Addict </label>
+                </div>
+                <div class="menuDeroulantCheckbox">
+                  <input id="misdirection_esthetique" type="checkbox">
+                  <label for="misdirection_esthetique"> Misdirection Esthétique </label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
