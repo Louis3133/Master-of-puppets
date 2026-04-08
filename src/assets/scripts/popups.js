@@ -3,10 +3,10 @@ import { Draggable } from "gsap/Draggable";
 
 gsap.registerPlugin(Draggable);
 
-const boardSection = document.getElementById('board-section');
+const boardSection = document.querySelector('.board-content');
 const popupButton = document.getElementById('popupButton');
 
-let zIndex = 1;
+let zIndex = 10;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -47,7 +47,7 @@ popupButton.addEventListener('click', () => {
     boardSection.appendChild(popup);
 
     Draggable.create(popup, {
-      bounds: "body",
+      bounds: ".board-content",
     });
   }
 });

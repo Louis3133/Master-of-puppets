@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 336.97 165.47">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #6d6e97;
+      }
+
+      .cls-3 {
+        stroke-width: .3px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke: #30325d;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        stroke-width: .5px;
+      }
+
+      .cls-6 {
+        fill: #b5b6d9;
+      }
+
+      .cls-7, .cls-5 {
+        fill: #c3c3d3;
+      }
+
+      .cls-8 {
+        fill: #4b4b5d;
+      }
+
+      .cls-5, .cls-2 {
+        stroke: #fff;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <ellipse class="cls-1" cx="290.83" cy="107.29" rx="5.82" ry="8.01"/>
+    </clipPath>
+  </defs>
+  <g id="Bureau">
+    <rect class="cls-8" width="336.97" height="165.47" rx="3.17" ry="3.17"/>
+    <g>
+      <ellipse class="cls-1" cx="290.83" cy="107.29" rx="5.82" ry="8.01"/>
+      <g class="cls-9">
+        <line class="cls-4" x1="290.83" y1="99.29" x2="290.83" y2="106"/>
+        <path class="cls-3" d="M282.43,106.82c9.81-2.16,18.32.7,16.57.64"/>
+      </g>
+    </g>
+    <rect class="cls-1" x="255.27" y="13.5" width="31.07" height="43.08" transform="translate(-.63 64.77) rotate(-13.62)"/>
+    <rect class="cls-7" x="280.29" y="16.86" width="31.07" height="43.08" transform="translate(26.65 -90.19) rotate(18.14)"/>
+    <rect class="cls-6" x="163.82" y="131.37" width="16.14" height="16.14" transform="translate(-28.01 44.41) rotate(-13.62)"/>
+    <circle class="cls-5" cx="172.87" cy="29.63" r="8.77"/>
+    <rect class="cls-2" x="158.68" y="28.59" width="5.42" height="1.04" rx=".39" ry=".39"/>
+  </g>
+</svg>

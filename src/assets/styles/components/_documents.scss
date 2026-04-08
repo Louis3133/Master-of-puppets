@@ -3,21 +3,66 @@ $folder-color: #2A2A81;
 .documents-folder {
   display: flex;
   justify-content: center;
-  padding: 50px;
+  background: rgba(0, 0, 0, 0.575);
+  height: 100%;
+
+
+  &.hidden {
+    display: none;
+  }
+
+  .title-section-folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 39px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    background-image: url(/images/bg-title-folder.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 350px;
+    padding: 24px 20px;
+
+    p {
+      color: #000;
+      text-align: center;
+      font-family: $font-family-texts;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      margin: unset;
+            text-transform: uppercase;
+    }
+
+    h2 {
+      color: #0707D9;
+      text-align: center;
+      font-family: $font-family-texts;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding-block: 18px;
+      border-block: 2px solid black;
+      margin-block: 22px;
+    }
+  }
 
   .folder-wrapper {
     position: relative;
     display: flex;
-    width: 400px; 
-    height: 600px;
-    background-color: $folder-color;
+    width: 550px;
+    height: 830px;
+    background-image: url(/images/folder-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 20px;
     gap: 20px;
     overflow: hidden;
 
     &.is-open {
-      width: fit-content; 
-      
+      width: fit-content;
+
       #cover-layer {
         opacity: 0;
         visibility: hidden;
@@ -28,16 +73,32 @@ $folder-color: #2A2A81;
   #cover-layer {
     position: absolute;
     inset: 0;
-    background-color: $folder-color; 
+    background-image: url(/images/folder-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-block: 140px;
     align-items: center;
     color: white;
+    justify-content: space-between;
+
+    &::after {
+      content: '';
+      background-image: url(/images/folder-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: -30px;
+      width: 80px;
+      height: 390px;
+      border-radius: 0 16px 16px 0;
+      z-index: 2;
+    }
   }
 
   .page {
-    flex: 0 0 400px; 
+    flex: 0 0 400px;
     background: white;
     padding: 30px;
     color: black;
@@ -58,7 +119,7 @@ $folder-color: #2A2A81;
 }
 
 #prev-page {
-  left: 50px; 
+  left: 50px;
 }
 
 #next-page {
@@ -73,4 +134,23 @@ $folder-color: #2A2A81;
   }
 }
 
+}
+
+.top-secret {
+  display: flex;
+  transform: rotate(-5deg);
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 16px;
+  border: 8px solid #766cde;
+  opacity: 0.9;
+  color: #766cde;
+  font-family: $font-family-texts;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: unset;
 }
