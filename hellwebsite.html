@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hellwebsite</title>
+    <script src="src/assets/scripts/hellwebsite.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <button id="enableAll">Activer tout</button>
+        <button id="disableAll">Désactiver tout</button>
+    </div>
+    <div>
+        <input id="autorite" type="checkbox">
+        <label> Biais d'Autorité</label>
+        <img id="autorite_img" src="" alt="Lorem Ipsum">
+    </div>
+    <div>
+        <input id="stress" type="checkbox">
+        <label> Biais de Stress</label>
+        <div id="countdown" style="display: none;">
+            00:00:00
+        </div>
+    </div>
+    <div>
+        <input id="honnete" type="checkbox">
+        <label> Filtre d'Honnêteté</label>
+        <p>Description produit de manière générale</p>
+        <div class="negatif" style="display: block;">
+            <ul>
+                <li>Point négatif 1</li>
+                <li>Point négatif 2</li>
+                <li>Point négatif 3</li>
+                <li>Point négatif 4</li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <input id="fomo" type="checkbox">
+        <label> Biais du FOMO</label>
+        <p class="fomoText" style="display: none;">
+            Il ne reste que <span class="stockCount">3</span> produits en stock !
+        </p>
+        <p class="fomoText" style="display: none;">
+            Il ne reste que <span class="stockCount">3</span> produits en stock FOIS 2 !
+        </p>
+    </div>
+    <div>
+        <input id="reciprocite" type="checkbox">
+        <label> Biais de Réciprocité</label>
+        <button id="panier"><img src="" alt="panier achat"></button>
+        <li id="contenuePanier" style="display: none;">
+            <ul>Produit 1 : <span class="prixArrondi" data-prix="20.00">16.00€</span></ul>
+            <ul>Produit 2 : <span class="prixArrondi" data-prix="12.00">12.00€</span></ul>
+            <ul>Produit 3 : <span class="prixArrondi" data-prix="27.00">27.00€</span></ul>
+            <ul id="reciprociteProduit" style="display: none;">Goodies cadeau : 2.99€</ul>
+        </li>
+    </div>
+    <input id="ancrage" type="checkbox">
+    <label> Biais d'Ancrage</label>
+    </div>
+    <div>
+        <input id="gambler" type="checkbox">
+        <label> Gambler Addict </label>
+        <!-- besoin de scss -->
+    </div>
+    <div>
+        <input id="misdirection_esthetique" type="checkbox">
+        <label> Misdirection Esthétique </label>
+        <button class="confirmer" data-set="S'abonner">S'abonner</button>
+        <button class="annuler" data-set="Non merci">Non merci</button>
+        <button class="confirmer" data-set="Je m'inscris">Je m'inscris</button>
+        <button class="annuler" data-set="Je ne m'inscris pas">Je ne m'inscris pas</button>
+    </div>
+</body>
+
+</html>
