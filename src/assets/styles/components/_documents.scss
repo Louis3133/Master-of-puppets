@@ -1,11 +1,22 @@
 .documents-folder {
+  &.hidden {
+    display: none !important;
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: rgba(10, 10, 20, 0.9);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px;
   perspective: 2000px;
-  color: $dark;
+  color: #1E1E1E;
   
   * {
     box-sizing: border-box; 
@@ -13,9 +24,12 @@
 
   .folder-wrapper {
     position: relative;
-    width: fit-content; 
+    width: 480px;
     height: 600px;
-    background-color: $blue;
+    background-image: url(/public/images/folder.svg);
+    background-size: 100%; 
+    background-position: left top;
+    background-repeat: no-repeat;
     transform-style: preserve-3d;
     will-change: width;
   }
@@ -25,7 +39,6 @@
     top: 0;
     width: 380px;
     height: 580px;
-    background: $white;
     padding: 40px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
     backface-visibility: hidden;
@@ -33,29 +46,34 @@
   }
 
   .page-left {
-    left: 0;
+    right: 480px;
     opacity: 0; 
+    background-image: url(/public/images/left-paper-bg.svg);
+    background-size:cover;
   }
 
   .page-right {
-    right: 0;
+    right: 70px;
     transform-origin: left center; 
     will-change: transform;
+    background-image: url(/public/images/right-paper-bg.svg);
+    background-size:cover;
   }
 
   .cover {
     position: absolute;
-    top: 0;
+    bottom: 5;
     right: 0;
-    width: 400px;
+    width: 480px;
     height: 100%;
-    background-color: $blue;
+    background-image: url(/public/images/cover-folder.svg);
+    background-size:cover;
     z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: $white;
+    color: #FFFFFB;
     transform-origin: left center;
     backface-visibility: hidden;
     cursor: pointer;
@@ -67,7 +85,7 @@
     bottom: 30px;
     padding: 10px 20px;
     background: #87898B;
-    color: $white;
+    color: #FFFFFB;
     border: none;
     cursor: pointer;
     opacity: 0; 
@@ -83,4 +101,20 @@
       pointer-events: auto;
     }
   }
+
+.close-folder-btn {
+    position: absolute;
+    top: 10%;
+    right: 30%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+    .close-folder-btn img{
+    width: 30px;
+    height: 30px;
+    }
+
 }
