@@ -35,6 +35,7 @@
     position: absolute;
     left: 15%;
     top: 20px;
+    cursor: pointer;
   }
 
   .desk {
@@ -101,7 +102,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.2;
-    z-index: 1;
     animation: flicker 0.30s infinite;
     pointer-events: none;
   }
