@@ -381,12 +381,14 @@
 
       <div class="board-table">
         <img class="table" src="/images/evil-board.png">
-        <button class="document"></button>
-        <button class="document"></button>
-        <button class="document"></button>
-        <button class="document"></button>
-        <button class="document"></button>
-        <button class="document"></button>
+        
+        <button class="document" data-folder="dossier1"></button>
+        <button class="document" data-folder="dossier2"></button>
+        <button class="document" data-folder="dossier3"></button>
+        <button class="document" data-folder="dossier4"></button>
+        <button class="document" data-folder="dossier5"></button>
+        <button class="document" data-folder="dossier6"></button>
+        
         <div class="heads">
           <img class="head" src="/images/head-1.svg">
           <img class="head" src="/images/head-2.svg">
@@ -507,8 +509,16 @@
         </div>
       </div>
 
-      <!-- <div id="documents-section" class="documents-folder hidden">
+    <div id="documents-section" class="documents-folder hidden">
+        
+      <button id="close-folder-btn" class="close-folder-btn">
+          <img src="/images/close-window.svg" alt="Fermer le dossier">
+      </button>
+
+
       <div class="folder-wrapper" id="main-folder">
+
+
 
         <div id="cover-layer" class="cover">
           <div class="title-section-folder">
@@ -527,7 +537,10 @@
         <div class="page page-right" id="right-content">
           <h2></h2>
           <button id="next-page">page suivante</button>
-        </div> -->
+        </div>
+
+      </div>
+    </div>
 
     </div>
     </div>

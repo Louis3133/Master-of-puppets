@@ -1,135 +1,187 @@
-// import '../styles/components/_documents.scss';
-// import { gsap } from "gsap";
+import '../styles/components/_documents.scss';
+import { gsap } from "gsap";
 
-// const pages = [
-//   { left: "Page 1 Content", right: "Page 2 Content" },
-//   { left: "Page 3 Content", right: "Page 4 Content" }
-// ];
+let allFoldersData = {};
+let currentPages = [];
+let currentIndex = 0;
+let isAnimating = false;
 
-// let currentIndex = 0;
-// let isAnimating = false;
+const folder = document.getElementById('main-folder');
+const cover = document.getElementById('cover-layer');
+const coverTitle = document.getElementById('cover-title');
+const leftDiv = document.getElementById('left-content');
+const rightDiv = document.getElementById('right-content');
+const leftPageEl = document.querySelector('.page-left');
+const nextBtn = document.getElementById('next-page');
+const prevBtn = document.getElementById('prev-page');
+const documentsSection = document.getElementById('documents-section');
+const documentButtons = document.querySelectorAll('.document');
+const closeFolderBtn = document.getElementById('close-folder-btn');
 
-// const folder = document.getElementById('main-folder');
-// const cover = document.getElementById('cover-layer');
-// const leftDiv = document.getElementById('left-content');
-// const rightDiv = document.getElementById('right-content');
-// const leftPageEl = document.querySelector('.page-left');
-// const nextBtn = document.getElementById('next-page');
-// const prevBtn = document.getElementById('prev-page');
+// Json fetch
+fetch('/bias.json')
+  .then(response => {
+    if(!response.ok) throw new Error("Le fichier JSON n'a pas été trouvé (Erreur 404)");
+    return response.json();
+  })
+  .then(data => {
+    allFoldersData = data;
+  })
+  .catch(error => console.error("❌ ERREUR JSON :", error));
 
-// function updateUI() {
-//   leftDiv.querySelector('h2').textContent = pages[currentIndex].left;
-//   rightDiv.querySelector('h2').textContent = pages[currentIndex].right;
-//   nextBtn.textContent = currentIndex === pages.length - 1 ? "redémarrer" : "page suivante";
-//   prevBtn.style.display = currentIndex === 0 ? "none" : "block";
-// }
+// open specific folder from table
+documentButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const folderKey = button.getAttribute('data-folder');
+    
+    if (allFoldersData[folderKey]) {
+      currentPages = allFoldersData[folderKey].pages;
+      if (coverTitle) coverTitle.innerHTML = allFoldersData[folderKey].titre;
+    }
 
-// // open folder
-// cover.addEventListener('click', () => {
-//   if (isAnimating) return;
-//   isAnimating = true;
-//   updateUI();
+    currentIndex = 0;
+    documentsSection.classList.remove('hidden');
+  });
+});
 
-//   const tl = gsap.timeline({ onComplete: () => {
-//     isAnimating = false;
-//     folder.classList.add('is-open');
-//   }});
+// close folder 
+closeFolderBtn.addEventListener('click', () => {
+  if (isAnimating) return;
+  isAnimating = true;
+  folder.classList.remove('is-open');
 
-//   tl.to(folder, { width: 800, duration: 0.6, ease: "power2.inOut" }, 0)
-//     .to(leftPageEl, { opacity: 1, duration: 0.3 }, 0.2)
-//     .to(cover, { rotationY: -180, duration: 0.6, ease: "power2.inOut" }, 0);
-// });
+  const tl = gsap.timeline({ onComplete: () => {
+    isAnimating = false;
+    currentIndex = 0; 
+    documentsSection.classList.add('hidden'); 
+  }});
 
-// // next page / restart
-// nextBtn.addEventListener('click', (e) => {
-//   e.stopPropagation();
-//   if (isAnimating) return;
+  tl.to(folder, { width: 380, duration: 0.6, ease: "power2.inOut" }, 0)
+    .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
+    .to(cover, { rotationY: 0, duration: 0.6, ease: "power2.inOut" }, 0);
+});
 
-//   if (currentIndex < pages.length - 1) {
-//     isAnimating = true;
-//     const oldLeftText = pages[currentIndex].left;
+function setPageContent(container, content) {
+  const target = container.querySelector('.text-content') || container.querySelector('h2');
+  if (target) target.innerHTML = content || "";
+}
 
-//     const flipPage = rightDiv.cloneNode(true);
-//     const btnClone = flipPage.querySelector('button');
-//     if (btnClone) btnClone.remove();
+function updateUI() {
+  if (!currentPages || currentPages.length === 0) return;
+  
+  setPageContent(leftDiv, currentPages[currentIndex].left);
+  setPageContent(rightDiv, currentPages[currentIndex].right);
+  
+  nextBtn.textContent = currentIndex === currentPages.length - 1 ? "redémarrer" : "page suivante";
+  prevBtn.style.display = currentIndex === 0 ? "none" : "block";
+}
 
-//     folder.appendChild(flipPage);
-//     gsap.set(flipPage, {
-//       position: 'absolute', top: 0, right: 0, width: 380, height: '580',
-//       zIndex: 50, transformOrigin: "left center", backfaceVisibility: "hidden"
-//     });
+// open folder
+cover.addEventListener('click', () => {
+  if (isAnimating) return;
+  isAnimating = true;
+  updateUI();
 
-//     currentIndex++;
-//     rightDiv.querySelector('h2').textContent = pages[currentIndex].right;
-//     nextBtn.textContent = currentIndex === pages.length - 1 ? "redémarrer" : "page suivante";
-//     prevBtn.style.display = "block";
+  const tl = gsap.timeline({ onComplete: () => {
+    isAnimating = false;
+    folder.classList.add('is-open');
+  }});
 
-//     gsap.to(flipPage, {
-//       rotationY: -180,
-//       duration: 1,
-//       ease: "power2.inOut",
-//       onUpdate: function() {
-//         if (this.progress() >= 0.5 && leftDiv.querySelector('h2').textContent === oldLeftText) {
-//           leftDiv.querySelector('h2').textContent = pages[currentIndex].left;
-//         }
-//       },
-//       onComplete: () => {
-//         flipPage.remove();
-//         isAnimating = false;
-//       }
-//     });
+  tl.to(folder, { width: 950, duration: 0.3, ease: "power2.inOut" }, 0)
+    .to(leftPageEl, { opacity: 1, duration: 0.3 }, 0.2)
+    .to(cover, { rotationY: -180, duration: 0.3, ease: "power2.inOut" }, 0);
+});
 
-//   } else {
+// next page / restart
+nextBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (isAnimating) return;
 
-//     isAnimating = true;
-//     folder.classList.remove('is-open');
+  if (currentIndex < currentPages.length - 1) {
+    isAnimating = true;
+    const oldLeftText = currentPages[currentIndex].left;
 
-//     const tl = gsap.timeline({ onComplete: () => {
-//       isAnimating = false;
-//       currentIndex = 0;
-//     }});
+    const flipPage = rightDiv.cloneNode(true);
+    const btnClone = flipPage.querySelector('button');
+    if (btnClone) btnClone.remove();
 
-//     tl.to(folder, { width: 380, duration: 0.6, ease: "power2.inOut" }, 0)
-//       .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
-//       .to(cover, { rotationY: 0, duration: 0.6, ease: "power2.inOut" }, 0);
-//   }
-// });
+    folder.appendChild(flipPage);
+    gsap.set(flipPage, {
+      position: 'absolute', top: 0, right: 70, width: 380, height: '580',
+      zIndex: 50, transformOrigin: "left center", backfaceVisibility: "hidden"
+    });
 
-// // previous page
-// prevBtn.addEventListener('click', (e) => {
-//   e.stopPropagation();
-//   if (isAnimating || currentIndex === 0) return;
+    currentIndex++;
+    setPageContent(rightDiv, currentPages[currentIndex].right);
+    nextBtn.textContent = currentIndex === currentPages.length - 1 ? "redémarrer" : "page suivante";
+    prevBtn.style.display = "block";
 
-//   isAnimating = true;
-//   const oldRightText = pages[currentIndex].right;
+    gsap.to(flipPage, {
+      rotationY: -180,
+      duration: 1,
+      ease: "power2.inOut",
+      onUpdate: function() {
+        if (this.progress() >= 0.5) {
+          setPageContent(leftDiv, currentPages[currentIndex].left);
+        }
+      },
+      onComplete: () => {
+        flipPage.remove();
+        isAnimating = false;
+      }
+    });
 
-//   const flipPage = leftDiv.cloneNode(true);
-//   const btnClone = flipPage.querySelector('button');
-//   if (btnClone) btnClone.remove();
+  } else {
+    isAnimating = true;
+    folder.classList.remove('is-open');
 
-//   folder.appendChild(flipPage);
-//   gsap.set(flipPage, {
-//     position: 'absolute', top: 0, left: 0, width: 380, height: 580,
-//     zIndex: 50, transformOrigin: "right center", backfaceVisibility: "hidden"
-//   });
+    const tl = gsap.timeline({ onComplete: () => {
+      isAnimating = false;
+      currentIndex = 0;
+    }});
 
-//   currentIndex--;
-//   leftDiv.querySelector('h2').textContent = pages[currentIndex].left;
-//   prevBtn.style.display = currentIndex === 0 ? "none" : "block";
-//   nextBtn.textContent = "page suivante";
+    tl.to(folder, { width: 380, duration: 0.6, ease: "power2.inOut" }, 0)
+      .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
+      .to(cover, { rotationY: 0, duration: 0.6, ease: "power2.inOut" }, 0);
+  }
+});
 
-//   gsap.to(flipPage, {
-//     rotationY: 180,
-//     duration: 0.7,
-//     ease: "power2.inOut",
-//     onUpdate: function() {
-//       if (this.progress() >= 0.5 && rightDiv.querySelector('h2').textContent === oldRightText) {
-//         rightDiv.querySelector('h2').textContent = pages[currentIndex].right;
-//       }
-//     },
-//     onComplete: () => {
-//       flipPage.remove();
-//       isAnimating = false;
-//     }
-//   });
-// });
+// previous page
+prevBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (isAnimating || currentIndex === 0) return;
+
+  isAnimating = true;
+  const oldRightText = currentPages[currentIndex].right;
+
+  const flipPage = leftDiv.cloneNode(true);
+  const btnClone = flipPage.querySelector('button');
+  if (btnClone) btnClone.remove();
+
+  folder.appendChild(flipPage);
+  gsap.set(flipPage, {
+    position: 'absolute', top: 0, right: 480 , width: 380, height: 580,
+    zIndex: 50, transformOrigin: "right center", backfaceVisibility: "hidden"
+  });
+
+  currentIndex--;
+  setPageContent(leftDiv, currentPages[currentIndex].left);
+  prevBtn.style.display = currentIndex === 0 ? "none" : "block";
+  nextBtn.textContent = "page suivante";
+
+  gsap.to(flipPage, {
+    rotationY: 180,
+    duration: 0.7,
+    ease: "power2.inOut",
+    onUpdate: function() {
+      if (this.progress() >= 0.5) {
+        setPageContent(rightDiv, currentPages[currentIndex].right);
+      }
+    },
+    onComplete: () => {
+      flipPage.remove();
+      isAnimating = false;
+    }
+  });
+});
