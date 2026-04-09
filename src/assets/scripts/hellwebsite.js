@@ -1,5 +1,3 @@
-
-
     // biais autorité
 
     const autoriteCheckbox = document.getElementById("autorite");
