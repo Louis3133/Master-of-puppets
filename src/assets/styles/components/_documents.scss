@@ -1,3 +1,4 @@
+@import '/src/assets/styles/config/variables';
 .documents-folder {
   &.hidden {
     display: none !important;
@@ -10,22 +11,42 @@
   height: 100vh;
   z-index: 9999;
   background-color: rgba(10, 10, 20, 0.9);
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 0px;
   perspective: 2000px;
-  color: #1E1E1E;
+  color: $dark;
   
   * {
     box-sizing: border-box; 
   }
 
+  p, li{
+    font-family: $font-family-texts;
+    font-size: 16px;
+  }
+
+  h1{
+    font-size: 80px;
+  }
+  h2{
+    font-size: 40px;
+  }
+  h3{
+    font-size: 34px;
+  }
+  h4{
+    font-size: 28px;
+  }
+  h1, h2, h3, h4{
+    font-family: $font-family-headings;
+  }
+
   .folder-wrapper {
     position: relative;
-    width: 480px;
-    height: 600px;
+    width: 620px;
+    height: 780px;
     background-image: url(/public/images/folder.svg);
     background-size: 100%; 
     background-position: left top;
@@ -37,55 +58,76 @@
   .page {
     position: absolute;
     top: 0;
-    width: 380px;
-    height: 580px;
-    padding: 40px;
+    width: 500px;
+    height: 740px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
     backface-visibility: hidden;
     margin: 10px;
   }
-
   .page-left {
-    right: 480px;
+    right: 620px;
     opacity: 0; 
     background-image: url(/public/images/left-paper-bg.svg);
-    background-size:cover;
+    background-size: cover;
   }
 
   .page-right {
-    right: 70px;
+    right: 90px;
     transform-origin: left center; 
     will-change: transform;
     background-image: url(/public/images/right-paper-bg.svg);
-    background-size:cover;
+    background-size: cover;
   }
 
   .cover {
     position: absolute;
-    bottom: 5;
+    bottom: 5px;
     right: 0;
-    width: 480px;
+    width: 620px;
     height: 100%;
     background-image: url(/public/images/cover-folder.svg);
-    background-size:cover;
+    background-size: cover;
     z-index: 100;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    color: #FFFFFB;
+    color: $white;
     transform-origin: left center;
     backface-visibility: hidden;
     cursor: pointer;
     will-change: transform;
   }
 
+  .title-section-folder{
+    background-image: url(/public/images/cover-title.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-wrap: wrap;
+  }
+
+  .cover img{
+    width:300px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+  }
+
   #next-page, #prev-page {
     position: absolute;
     bottom: 30px;
     padding: 10px 20px;
-    background: #87898B;
-    color: #FFFFFB;
+    background: $yellow;
+    color: $dark;
     border: none;
     cursor: pointer;
     opacity: 0; 
@@ -102,19 +144,86 @@
     }
   }
 
-.close-folder-btn {
+  .close-folder-btn {
     position: absolute;
-    top: 10%;
-    right: 30%;
+    top: 5%;
+    right: 15%;
     background: transparent;
     border: none;
     cursor: pointer;
     z-index: 10000;
   }
 
-    .close-folder-btn img{
-    width: 30px;
-    height: 30px;
+  .close-folder-btn img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .text-content {
+    position: relative;
+    z-index: 100;
+    color: #111 !important;
+    height: 85%;
+    overflow-y: auto;
+    padding-right: 15px;
+    
+    h3 {
+      color: #b50000;
+      margin-top: 0;
+      font-size: 20px;
+    }
+    
+    p, li {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+
+  .text-content::-webkit-scrollbar { 
+    width: 6px; 
+  }
+  
+  .text-content::-webkit-scrollbar-thumb { 
+    background: rgba(0,0,0,0.3); 
+    border-radius: 10px; 
+  }
+
+
+
+
+    .page-header { margin-bottom: 10px; }
+    .meta { font-size: 12px; color: #555; }
+    .center-title { text-align: center; font-size: 24px; margin-bottom: 20px; }
+    .blue-title { color: $blue; font-size: 16px; margin-top: 30px; }
+    .approved-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
     }
 
+    .post-it {
+      background-color: $yellow;
+      padding: 10px;
+      transform: rotate(-3deg);
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      width: 200px;
+      margin: 20px auto;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      position: absolute;
+    }
+
+    .quote-box {
+      border-left: 4px solid #444;
+      padding-left: 15px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #333;
+    }
+    
+    .links-list {
+      list-style-type: none;
+      padding: 0;
+      li a { color: $dark; text-decoration: underline; font-size: 16px; word-break: break-all; }
+    }
 }

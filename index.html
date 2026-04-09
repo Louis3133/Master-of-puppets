@@ -382,12 +382,12 @@
 
       <div class="board-table">
         <img class="table" src="/images/evil-board.png">
-        <button class="document haloDoc"></button>
-        <button class="document haloDoc"></button>
-        <button class="document haloDoc"></button>
-        <button class="document haloDoc"></button>
-        <button class="document haloDoc"></button>
-        <button class="document haloDoc"></button>
+        <button class="document haloDoc" data-folder="dossier2"></button>
+        <button class="document haloDoc" data-folder="dossier1"> </button>
+        <button class="document haloDoc" data-folder="dossier6"></button>
+        <button class="document haloDoc" data-folder="dossier3"></button>
+        <button class="document haloDoc" data-folder="dossier5"></button>
+        <button class="document haloDoc" data-folder="dossier4"></button>
         <div class="heads">
           <img class="head" src="/images/head-1.svg">
           <img class="head" src="/images/head-2.svg">
@@ -513,19 +513,12 @@
       <button id="close-folder-btn" class="close-folder-btn">
           <img src="/images/close-window.svg" alt="Fermer le dossier">
       </button>
-
-
       <div class="folder-wrapper" id="main-folder">
-
-
-
         <div id="cover-layer" class="cover">
           <div class="title-section-folder">
-            <p>Monsieur gros méchant</p>
-            <h2>Perception de l'acheteur</h2>
-            <p>Gros méchant corp</p>
+            <h3 id="cover-title"></h3>
           </div>
-          <p class="top-secret">top secret</p>
+          <img src="/public/images/top-secret.svg" alt="">
         </div>
 
         <div class="page page-left" id="left-content">

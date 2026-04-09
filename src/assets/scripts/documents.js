@@ -21,15 +21,16 @@ const closeFolderBtn = document.getElementById('close-folder-btn');
 // Json fetch
 fetch('/bias.json')
   .then(response => {
-    if(!response.ok) throw new Error("Le fichier JSON n'a pas été trouvé (Erreur 404)");
+    if(!response.ok) throw new Error("Erreur 404");
     return response.json();
   })
   .then(data => {
     allFoldersData = data;
   })
-  .catch(error => console.error("❌ ERREUR JSON :", error));
+  .catch(error => console.error(error));
 
-// open specific folder from table
+
+  // open specific folder from table
 documentButtons.forEach(button => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
@@ -57,9 +58,9 @@ closeFolderBtn.addEventListener('click', () => {
     documentsSection.classList.add('hidden'); 
   }});
 
-  tl.to(folder, { width: 380, duration: 0.6, ease: "power2.inOut" }, 0)
+  tl.to(folder, { width: 620, duration: 0.2, ease: "power2.inOut" }, 0)
     .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
-    .to(cover, { rotationY: 0, duration: 0.6, ease: "power2.inOut" }, 0);
+    .to(cover, { rotationY: 0, duration: 0.3, ease: "power2.inOut" }, 0);
 });
 
 function setPageContent(container, content) {
@@ -88,7 +89,7 @@ cover.addEventListener('click', () => {
     folder.classList.add('is-open');
   }});
 
-  tl.to(folder, { width: 950, duration: 0.3, ease: "power2.inOut" }, 0)
+  tl.to(folder, { width: 1220, duration: 0.1, ease: "power2.inOut" }, 0)
     .to(leftPageEl, { opacity: 1, duration: 0.3 }, 0.2)
     .to(cover, { rotationY: -180, duration: 0.3, ease: "power2.inOut" }, 0);
 });
@@ -100,7 +101,6 @@ nextBtn.addEventListener('click', (e) => {
 
   if (currentIndex < currentPages.length - 1) {
     isAnimating = true;
-    const oldLeftText = currentPages[currentIndex].left;
 
     const flipPage = rightDiv.cloneNode(true);
     const btnClone = flipPage.querySelector('button');
@@ -108,7 +108,7 @@ nextBtn.addEventListener('click', (e) => {
 
     folder.appendChild(flipPage);
     gsap.set(flipPage, {
-      position: 'absolute', top: 0, right: 70, width: 380, height: '580',
+      position: 'absolute', top: 0, right: 90, width: 500, height: 740,
       zIndex: 50, transformOrigin: "left center", backfaceVisibility: "hidden"
     });
 
@@ -141,7 +141,7 @@ nextBtn.addEventListener('click', (e) => {
       currentIndex = 0;
     }});
 
-    tl.to(folder, { width: 380, duration: 0.6, ease: "power2.inOut" }, 0)
+    tl.to(folder, { width: 620, duration: 0.2, ease: "power2.inOut" }, 0)
       .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
       .to(cover, { rotationY: 0, duration: 0.6, ease: "power2.inOut" }, 0);
   }
@@ -153,7 +153,6 @@ prevBtn.addEventListener('click', (e) => {
   if (isAnimating || currentIndex === 0) return;
 
   isAnimating = true;
-  const oldRightText = currentPages[currentIndex].right;
 
   const flipPage = leftDiv.cloneNode(true);
   const btnClone = flipPage.querySelector('button');
@@ -161,7 +160,7 @@ prevBtn.addEventListener('click', (e) => {
 
   folder.appendChild(flipPage);
   gsap.set(flipPage, {
-    position: 'absolute', top: 0, right: 480 , width: 380, height: 580,
+    position: 'absolute', top: 0, right: 620 , width: 500, height: 740,
     zIndex: 50, transformOrigin: "right center", backfaceVisibility: "hidden"
   });
 
