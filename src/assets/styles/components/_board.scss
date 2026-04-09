@@ -14,7 +14,7 @@
 .board-content {
   height: 100%;
   width: 100%;
-  background-image:   url(/images/walls.svg);
+  background-image: url(/images/walls.svg);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -35,6 +35,46 @@
     position: absolute;
     left: 15%;
     top: 20px;
+    cursor: pointer;
+    background-image: url(/images/chest.svg);
+    background-repeat: no-repeat;
+  }
+
+  .haloCasier::before {
+    content: '';
+    position: absolute;
+    top: 84%;
+    left: 50%;
+    width: 150px;
+    height: 30px;
+    border: $yellow solid 3px;
+    border-radius: 8px;
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+    background: none;
+    transform: translate(-50%, -50%) perspective(4px) rotateX(-2deg) scale(1);
+    animation: haloCasier 4s ease-in-out infinite;
+  }
+
+  @keyframes haloCasier {
+    0% {
+      transform: translate(-50%, -50%) perspective(4px) rotateX(-2deg) scale(1);
+      box-shadow: 0 0 0px rgba($yellow, 0);
+      opacity: 0.5;
+    }
+
+    50% {
+      transform: translate(-50%, -50%) perspective(4px) rotateX(-2deg) scale(1.05);
+      box-shadow: 0 0 15px 10px rgba($yellow, 0.4);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) perspective(4px) rotateX(-2deg) scale(1);
+      box-shadow: 0 0 0px rgba($yellow, 0);
+      opacity: 0.5;
+    }
   }
 
   .desk {
@@ -64,6 +104,43 @@
       right: 55px;
       top: 50px;
       cursor: pointer;
+      background-image: url('/images/computer.svg');
+    }
+
+    .haloPC::before {
+      content: '';
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 68%;
+      left: 51%;
+      width: 88%;
+      height: 62%;
+      border: $yellow solid 3px;
+      border-radius: 8px;
+      opacity: 0.8;
+      z-index: 10;
+      pointer-events: none;
+      animation: haloPC 4s ease-in-out infinite;
+    }
+
+    @keyframes haloPC {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0px rgba($yellow, 0);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.03);
+        box-shadow: 0 0 6px 4px rgba($yellow, 0.7);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0px rgba($yellow, 0);
+        opacity: 0.5;
+      }
     }
   }
 
@@ -108,12 +185,35 @@
 
 
   @keyframes flicker {
-    0%   { opacity: 0.15; transform: scale(1); }
-    20%  { opacity: 0.25; transform: scale(1.02); }
-    40%  { opacity: 0.1;  transform: scale(0.98); }
-    60%  { opacity: 0.3;  transform: scale(1.01); }
-    80%  { opacity: 0.18; transform: scale(1); }
-    100% { opacity: 0.22; transform: scale(1.02); }
+    0% {
+      opacity: 0.15;
+      transform: scale(1);
+    }
+
+    20% {
+      opacity: 0.25;
+      transform: scale(1.02);
+    }
+
+    40% {
+      opacity: 0.1;
+      transform: scale(0.98);
+    }
+
+    60% {
+      opacity: 0.3;
+      transform: scale(1.01);
+    }
+
+    80% {
+      opacity: 0.18;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0.22;
+      transform: scale(1.02);
+    }
   }
 }
 
@@ -170,43 +270,43 @@
   }
 
   .heads {
-  position: absolute;
-  inset: 0;
-
-  .head {
     position: absolute;
+    inset: 0;
 
-    &:nth-child(1) {
-      top: -5px;
-      right: -55px;
-    }
+    .head {
+      position: absolute;
 
-    &:nth-child(2) {
-      top: 120px;
-      right: -320px;
-    }
+      &:nth-child(1) {
+        top: -5px;
+        right: -55px;
+      }
 
-    &:nth-child(3) {
-      top: 410px;
-      right: -300px;
-    }
+      &:nth-child(2) {
+        top: 120px;
+        right: -320px;
+      }
 
-    &:nth-child(4) {
-      bottom: -20px;
-      right: -70px;
-    }
+      &:nth-child(3) {
+        top: 410px;
+        right: -300px;
+      }
 
-    &:nth-child(5) {
-      bottom: 135px;
-      left: -295px;
-    }
+      &:nth-child(4) {
+        bottom: -20px;
+        right: -70px;
+      }
 
-    &:nth-child(6) {
-      top: 140px;
-      left: -320px;
+      &:nth-child(5) {
+        bottom: 135px;
+        left: -295px;
+      }
+
+      &:nth-child(6) {
+        top: 140px;
+        left: -320px;
+      }
     }
   }
-}
 
   .document {
     width: 60px;
@@ -252,6 +352,41 @@
       top: 225px;
       left: -165px;
       transform: rotate(120deg);
+    }
+  }
+
+  .haloDoc::before {
+    content: '';
+    position: absolute;
+    top: 49.5%;
+    left: 56%;
+    width: 88%;
+    height: 100%;
+    border: $yellow solid 3px;
+    border-radius: 8px;
+    opacity: 0.8;
+    z-index: 10;
+    pointer-events: none;
+    animation: haloDoc 3s ease-in-out infinite;
+  }
+
+  @keyframes haloDoc {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 0px rgba($yellow, 0);
+      opacity: 0.5;
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 0 25px 10px rgba($yellow, 0.7);
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 0px rgba($yellow, 0);
+      opacity: 0.5;
     }
   }
 }
