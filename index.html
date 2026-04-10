@@ -364,7 +364,11 @@
       </svg>
     </div>
     <img class="main-title" src="/images/main-title.svg" alt="Masters of puppets">
-    <a class="to-board" href="#board-section">Assister à la réunion</a>
+    <div class="buttons-subtitle">
+      <h2>Infiltrez les plus grands méchants du marketing</h2>
+      <a class="to-board" href="#board-section">Assister à la réunion</a>
+    </div>
+
   </section>
 
 
@@ -503,9 +507,7 @@
         </div>
         <div style="display: none;">
           <div>
-            <div>
-              <img id="autorite_img" src="" alt="Lorem Ipsum">
-            </div>
+
             <div id="countdown" style="display: none;">
               00:00:00
             </div>
@@ -549,7 +551,7 @@
           </div>
         </div>
 
-        <div class="banner-hell">
+        <div id="bannerGambling" class="banner-hell hidden">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
               d="M11 16H13V8H11V16ZM15.25 13.25C15.9404 13.25 16.5 12.6904 16.5 12C16.5 11.3096 15.9404 10.75 15.25 10.75C14.5596 10.75 14 11.3096 14 12C14 12.6904 14.5596 13.25 15.25 13.25ZM10 12C10 12.6904 9.4404 13.25 8.75 13.25C8.0596 13.25 7.5 12.6904 7.5 12C7.5 11.3096 8.0596 10.75 8.75 10.75C9.4404 10.75 10 11.3096 10 12Z"
@@ -566,7 +568,7 @@
               <img class="logo-nav-hell" src="/images/hellicon.svg">
             </div>
             <div class="navigation-hell">
-              <button id="product-button">Produits</button>
+              <button class="product-button" id="product-button">Produits</button>
             </div>
           </div>
           <button id="basket-button" class="basket">
@@ -589,7 +591,7 @@
                   <div class="basket-item-infos-top">
                     <p class="product-name">Sac à main en cuir</p>
                     <div class="price-button">
-                      <p>199,99€</p>
+                      <p class="prixArrondi" data-prix="200.00">200.00€</p>
                       <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                           <path d="M0.5 0.5L20 20M0.5 20L20 0.5" stroke="black" stroke-linecap="round" />
@@ -606,7 +608,7 @@
                   <div class="basket-item-infos-top">
                     <p class="product-name">Trousse de voyage (cadeau supplémentaire)</p>
                     <div class="price-button">
-                      <p>19,99€</p>
+                      <p class="prixArrondi" data-prix="5.00">5.00€</p>
                       <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                           <path d="M0.5 0.5L20 20M0.5 20L20 0.5" stroke="black" stroke-linecap="round" />
@@ -614,15 +616,6 @@
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="similar-articles">
-                <h3>Articles similaires</h3>
-                <div class="similar-list">
-                  <img src="/images/product-1.png">
-                  <img src="/images/product-2.png">
-                  <img src="/images/product-3.png">
-                  <img src="/images/product-4.png">
                 </div>
               </div>
             </div>
@@ -633,11 +626,11 @@
                   <div class="recap-list">
                     <div class="price-product">
                       <p>Sac à main en cuir</p>
-                      <p>199,99€</p>
+                      <p class="prixArrondi" data-prix="200.00">200.00€</p>
                     </div>
                     <div class="price-product">
                       <p>TTC</p>
-                      <p>48,68€</p>
+                      <p >48,68€</p>
                     </div>
                   </div>
                 </div>
@@ -662,7 +655,7 @@
                 <input id="ignore" name="ignore" type="checkbox">
                 <label for="ignore">Non, je préfère rester ignorant</label>
               </div>
-              <button class="buy">
+              <button id class="buy">
                 Continuer vers le paiement
               </button>
             </div>
@@ -672,7 +665,7 @@
           <div class="content-main">
             <div class="images-section">
               <div class="images-nav">
-                <img class="little-image" src="/images/product-1.png">
+                <img class="little-image" id="autorite_img" src="/images/product-1.png">
                 <img class="little-image" src="/images/product-2.png">
                 <img class="little-image" src="/images/product-3.png">
                 <img class="little-image" src="/images/product-4.png">
@@ -694,11 +687,17 @@
                     <p>3,6/5</p>
                   </div>
                 </div>
-                <p class="limited-offer">Offre à durée limitée</p>
-                <p class="price">200€</p>
-                <div class="economy">
+                <p id="stressBiaisLimite" class="limited-offer hidden">Offre à durée limitée</p>
+                <div id="ancrageBiais">
+                <div class="prices-informations">
+                <p class="promo-percentage ancrage-infos hidden">-50%</p>
+                <p data-prix="200.00" class="price prixArrondi">200€</p>
+                <p class="lined-price ancrage-infos hidden">4OO€</p>
+                </div>
+                <div class="economy ancrage-infos hidden">
                   <p>Prix le plus bas des 30 derniers jours : 400€</p>
                   <p>Économisez : 200€</p>
+                </div>
                 </div>
               </div>
 
@@ -715,7 +714,7 @@
                       <p class="modality-title">Livraison</p>
                       <p class="modality-item">4 à 5 jours ouvrés</p>
                       <p class="modality-item">Livraison GRATUITE lors de votre première commande. </p>
-                      <p class="modality-item">Commandez dans les 12 h 25 min.</p>
+                      <p id="stressBiais" class="modality-item hidden">Commandez dans les 12 h 25 min.</p>
                     </div>
                   </div>
 
@@ -728,6 +727,7 @@
                     <div class="modality">
                       <p class="modality-title">Magasin</p>
                       <p class="modality-item">2 à 3 jours ouvrés</p>
+                      <p id="fomoElement" class="modality-item hidden">Magasin - Stock limité. 1 restant(s)</p>
                     </div>
                   </div>
                 </div>
@@ -750,11 +750,9 @@
                 le 26 est un modèle compact avec deux bandoulières amovibles pour un porté à la main, à l’épaule ou
                 croisé.</p>
               <div class="specs">
-                <div class="spec-produc-item"><span class="spec-product-category">Matériaux</span>Cuir d’animal.
-                  Doublure en daim synthétique.</div>
-                <div class="spec-produc-item"><span class="spec-product-category">Caractéristiques</span>Poche avec
-                  fermeture éclair à l’intérieur. Fermeture pivotante</div>
-                <div class="spec-produc-item"><span class="spec-product-category">Origine</span>Made in Bengladesh</div>
+                <div class="spec-produc-item"><span class="spec-product-category">Matériaux</span><p id="negatif1">Simili cuir, Doublure en daim synthétique</p></div>
+                <div class="spec-produc-item"><span class="spec-product-category">Caractéristiques</span><p id="negatif2">Poche avec fermeture éclair à l’intérieur.</p></div>
+                <div class="spec-produc-item"><span class="spec-product-category">Origine</span><p id="negatif3">Made in China</p></div>
               </div>
             </div>
             <div class="labels-multiple">
@@ -768,7 +766,7 @@
                   Payez en plusieurs fois
                 </button>
               </div>
-              <div class="fake-labels">
+              <div id="fakeLabels" class="fake-labels hidden">
                 <div class="bad-label modetik">
                   <svg xmlns="http://www.w3.org/2000/svg" width="42" height="40" viewBox="0 0 42 40" fill="none">
                     <path
