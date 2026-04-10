@@ -1,16 +1,17 @@
-
 @use '../config' as *;
 
 .directory {
     position: absolute;
     left: 10px;
-    width: 350px;
+    width: 355px;
     display: flex;
     flex-direction: column;
     bottom: 0;
     opacity: 0;
     transform: translateY(-100px);
     visibility: hidden;
+    overflow: visible;
+    z-index: 50;
 
     &.is-active {
         display: block;
@@ -31,6 +32,7 @@
                 position: relative;
                 width: 100%;
                 margin-top: -100px; 
+                z-index: 1;
 
                 img {
                     width: 100%;
@@ -45,14 +47,57 @@
                     width: 130px;
                     height: 120px;
                     background-color: black;
-                    border: solid #fff;
+                    border: solid $white;
                     border-width: 5px 5px 20px 5px;
-                    top: 0;
+                    top: -10px;
                     left: 20px;
                     z-index: 2;
                     cursor: pointer;
                     pointer-events: auto;
-                    box-shadow: 0 0 15px 2px rgba(244, 246, 246, 0.7);
+                    box-shadow: 0 0 12px 2px rgba(234, 202, 64, 0.9);
+                    display: flex;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .folder-text {
+                        position: absolute;
+                        top: -10px;      
+                        left: 110%;    
+                        width: 350px;  
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all 0.1s ease;
+                        z-index: 1000;
+
+                        img {
+                            width: 100%; 
+                            height: auto;
+                            pointer-events: none;
+                        }
+
+                        p {
+                            position: absolute;
+                            top: 50%;
+                            left: 55%;  
+                            transform: translate(-50%, -50%);
+                            width: 80%; 
+                            margin: 0;
+                            color: black;
+                            z-index: 5;
+                            font-family: $font-family-texts;
+                        }
+                    }
+                    
+                    &:hover {
+                        .folder-text {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateX(10px); 
+                        }
+                    }
                 }
 
                 .picture2, .picture5{
@@ -64,20 +109,35 @@
                 }
 
                 .picture:hover{
-                    z-index: 3;
+                    // z-index: 3;
                     top: -90px;
                     transition: 0.2s;
                     transform: rotate(0);
+                    z-index: 100;
                 }
 
-                span{
+                .label-folder{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     position: absolute;
                     z-index: 4;
-                    right: 0; 
-                    top: 45px;    
-                    width: 180px;
-                    display: block;
+                    top: 50px;
+                    left: 72%;
+                    width: 150px;
                     text-align: center;
+                    transform: translate(-50%, -50%);
+                    gap: 3px;
+                    font-family: $font-family-texts;
+                    z-index: 2;
+
+                    p{
+                        margin: 0;
+                    }
+
+                    span{
+                        font-weight: bold;
+                    }
                 }
             }
     }
