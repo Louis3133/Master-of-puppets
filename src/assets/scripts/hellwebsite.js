@@ -172,18 +172,29 @@
     // menu déroulant
 
     const boutonMenuDeroulant = document.getElementById("boutonMenuDeroulant");
+    const backdropMenuDeroulant = document.getElementById("menu-backdrop");
+    const boutonCloseMenuDeroulant = document.getElementById("boutonCloseMenuDeroulant");
     const menuDeroulantContenue = document.getElementById("menuDeroulantContenue");
     const imageBoutonFleche = boutonMenuDeroulant.querySelector("img");
 
     boutonMenuDeroulant.addEventListener("click", () => {
         menuDeroulantContenue.classList.toggle('visible');
         boutonMenuDeroulant.classList.toggle('active');
+        backdropMenuDeroulant.classList.toggle('hidden');
+    });
+
+
+    boutonCloseMenuDeroulant.addEventListener("click", () => {
+        menuDeroulantContenue.classList.toggle('visible');
+        boutonMenuDeroulant.classList.toggle('active');
+        backdropMenuDeroulant.classList.toggle('hidden');
     });
 
     addEventListener('keypress', (deroule) => {
         if (deroule.key === 'Enter') {
             menuDeroulantContenue.classList.toggle('visible');
             boutonMenuDeroulant.classList.toggle('active');
+            backdropMenuDeroulant.classList.toggle('hidden');
         }});
 
 

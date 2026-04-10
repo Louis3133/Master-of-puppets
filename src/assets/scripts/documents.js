@@ -29,39 +29,108 @@ fetch('/bias.json')
   })
   .catch(error => console.error(error));
 
+// --- Animation helpers ---
 
-  // open specific folder from table
+function openSection(onComplete) {
+  // Reset state before showing
+  gsap.set(folder, { y: -200, rotation: -12, opacity: 0 });
+  documentsSection.classList.remove('hidden');
+
+  const tl = gsap.timeline({ onComplete });
+  // Fade in backdrop
+  tl.fromTo(documentsSection,
+    { opacity: 0 },
+    { opacity: 1, duration: 0.25, ease: "power2.out" },
+    0
+  );
+  // Folder drops in with a slight bounce and rotation correction
+  tl.to(folder, {
+    y: 0,
+    rotation: 0,
+    opacity: 1,
+    duration: 0.65,
+    ease: "back.out(1.4)"
+  }, 0.1);
+}
+
+function closeSection(onComplete) {
+  const tl = gsap.timeline({
+    onComplete: () => {
+      documentsSection.classList.add('hidden');
+      gsap.set(documentsSection, { opacity: 1 });
+      if (onComplete) onComplete();
+    }
+  });
+  tl.to(folder, {
+    y: -220,
+    rotation: 12,
+    opacity: 0,
+    duration: 0.45,
+    ease: "power2.in"
+  }, 0);
+  tl.to(documentsSection, {
+    opacity: 0,
+    duration: 0.25,
+    ease: "power2.in"
+  }, 0.25);
+}
+
+// --- Open folder from table ---
+
 documentButtons.forEach(button => {
   button.addEventListener('click', (e) => {
     e.preventDefault();
     const folderKey = button.getAttribute('data-folder');
-    
+
     if (allFoldersData[folderKey]) {
       currentPages = allFoldersData[folderKey].pages;
       if (coverTitle) coverTitle.innerHTML = allFoldersData[folderKey].titre;
     }
 
     currentIndex = 0;
-    documentsSection.classList.remove('hidden');
+
+    // Reset folder inner state before animating in
+    folder.classList.remove('is-open');
+    gsap.set(cover, { rotationY: 0 });
+    gsap.set(leftPageEl, { opacity: 0 });
+    gsap.set(folder, { width: 480 });
+
+    openSection();
   });
 });
 
-// close folder 
+// --- Close folder button ---
+
 closeFolderBtn.addEventListener('click', () => {
   if (isAnimating) return;
   isAnimating = true;
-  folder.classList.remove('is-open');
 
-  const tl = gsap.timeline({ onComplete: () => {
-    isAnimating = false;
-    currentIndex = 0; 
-    documentsSection.classList.add('hidden'); 
-  }});
+  // If folder is open, close pages first, then fly out
+  if (folder.classList.contains('is-open')) {
+    folder.classList.remove('is-open');
 
-  tl.to(folder, { width: 620, duration: 0.2, ease: "power2.inOut" }, 0)
-    .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
-    .to(cover, { rotationY: 0, duration: 0.3, ease: "power2.inOut" }, 0);
+    const tlClose = gsap.timeline({
+      onComplete: () => {
+        closeSection(() => {
+          isAnimating = false;
+          currentIndex = 0;
+        });
+      }
+    });
+
+    tlClose
+      .to(folder, { width: 480, duration: 0.5, ease: "power2.inOut" }, 0)
+      .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
+      .to(cover, { rotationY: 0, duration: 0.5, ease: "power2.inOut" }, 0);
+  } else {
+    closeSection(() => {
+      isAnimating = false;
+      currentIndex = 0;
+    });
+  }
 });
+
+// --- Page content helpers ---
 
 function setPageContent(container, content) {
   const target = container.querySelector('.text-content') || container.querySelector('h2');
@@ -70,15 +139,16 @@ function setPageContent(container, content) {
 
 function updateUI() {
   if (!currentPages || currentPages.length === 0) return;
-  
+
   setPageContent(leftDiv, currentPages[currentIndex].left);
   setPageContent(rightDiv, currentPages[currentIndex].right);
-  
+
   nextBtn.textContent = currentIndex === currentPages.length - 1 ? "redémarrer" : "page suivante";
   prevBtn.style.display = currentIndex === 0 ? "none" : "block";
 }
 
-// open folder
+// --- Open folder cover ---
+
 cover.addEventListener('click', () => {
   if (isAnimating) return;
   isAnimating = true;
@@ -94,7 +164,8 @@ cover.addEventListener('click', () => {
     .to(cover, { rotationY: -180, duration: 0.3, ease: "power2.inOut" }, 0);
 });
 
-// next page / restart
+// --- Next page / restart ---
+
 nextBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   if (isAnimating) return;
@@ -136,18 +207,21 @@ nextBtn.addEventListener('click', (e) => {
     isAnimating = true;
     folder.classList.remove('is-open');
 
-    const tl = gsap.timeline({ onComplete: () => {
-      isAnimating = false;
-      currentIndex = 0;
-    }});
+    const tl = gsap.timeline({
+      onComplete: () => {
+        currentIndex = 0;
+        isAnimating = false;
+      }
+    });
 
-    tl.to(folder, { width: 620, duration: 0.2, ease: "power2.inOut" }, 0)
+    tl.to(folder, { width: 480, duration: 0.6, ease: "power2.inOut" }, 0)
       .to(leftPageEl, { opacity: 0, duration: 0.2 }, 0)
       .to(cover, { rotationY: 0, duration: 0.6, ease: "power2.inOut" }, 0);
   }
 });
 
-// previous page
+// --- Previous page ---
+
 prevBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   if (isAnimating || currentIndex === 0) return;
@@ -160,7 +234,7 @@ prevBtn.addEventListener('click', (e) => {
 
   folder.appendChild(flipPage);
   gsap.set(flipPage, {
-    position: 'absolute', top: 0, right: 620 , width: 500, height: 740,
+    position: 'absolute', top: 0, right: 480, width: 380, height: 580,
     zIndex: 50, transformOrigin: "right center", backfaceVisibility: "hidden"
   });
 
