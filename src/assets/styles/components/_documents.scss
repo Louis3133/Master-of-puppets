@@ -1,4 +1,6 @@
-@import '/src/assets/styles/config/variables';
+@use '../config' as *;
+
+
 .documents-folder {
   &.hidden {
     display: none !important;
@@ -17,9 +19,9 @@
   padding: 0px;
   perspective: 2000px;
   color: $dark;
-  
+
   * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
   }
 
   p, li{
@@ -48,11 +50,14 @@
     width: 620px;
     height: 780px;
     background-image: url(/public/images/folder.svg);
-    background-size: 100%; 
+    background-size: 100%;
     background-position: left top;
     background-repeat: no-repeat;
     transform-style: preserve-3d;
-    will-change: width;
+    will-change: width, transform;
+
+    // GSAP will handle y, rotation, opacity on enter/exit
+    // so we don't set them here — letting JS own those properties
   }
 
   .page {
@@ -69,14 +74,14 @@
   }
   .page-left {
     right: 620px;
-    opacity: 0; 
+    opacity: 0;
     background-image: url(/public/images/left-paper-bg.svg);
     background-size: cover;
   }
 
   .page-right {
     right: 90px;
-    transform-origin: left center; 
+    transform-origin: left center;
     will-change: transform;
     background-image: url(/public/images/right-paper-bg.svg);
     background-size: cover;
@@ -130,15 +135,22 @@
     color: $dark;
     border: none;
     cursor: pointer;
-    opacity: 0; 
+    opacity: 0;
     pointer-events: none;
   }
 
-  #next-page { right: 30px; }
-  #prev-page { left: 30px; }
+  #next-page {
+    right: 30px;
+  }
+
+  #prev-page {
+    left: 30px;
+  }
 
   .folder-wrapper.is-open {
-    #next-page, #prev-page {
+
+    #next-page,
+    #prev-page {
       opacity: 1;
       pointer-events: auto;
     }
@@ -166,26 +178,26 @@
     height: 85%;
     overflow-y: auto;
     padding-right: 15px;
-    
+
     h3 {
       color: #b50000;
       margin-top: 0;
       font-size: 20px;
     }
-    
+
     p, li {
       font-size: 14px;
       line-height: 1.6;
     }
   }
 
-  .text-content::-webkit-scrollbar { 
-    width: 6px; 
+  .text-content::-webkit-scrollbar {
+    width: 6px;
   }
-  
-  .text-content::-webkit-scrollbar-thumb { 
-    background: rgba(0,0,0,0.3); 
-    border-radius: 10px; 
+
+  .text-content::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
   }
 
 
@@ -220,7 +232,7 @@
       font-style: italic;
       color: #333;
     }
-    
+
     .links-list {
       list-style-type: none;
       padding: 0;
