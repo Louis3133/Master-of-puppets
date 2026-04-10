@@ -186,7 +186,7 @@ nextBtn.addEventListener('click', (e) => {
 
     currentIndex++;
     setPageContent(rightDiv, currentPages[currentIndex].right);
-    nextBtn.textContent = currentIndex === currentPages.length - 1 ? "redémarrer" : "page suivante";
+    nextBtn.textContent = currentIndex === currentPages.length - 1 ? "recommencer" : "page suivante";
     prevBtn.style.display = "block";
 
     gsap.to(flipPage, {
