@@ -235,7 +235,7 @@ prevBtn.addEventListener('click', (e) => {
 
   folder.appendChild(flipPage);
   gsap.set(flipPage, {
-    position: 'absolute', top: 0, right: 480, width: 380, height: 580,
+    position: 'absolute', top: 0, right: 620, width: 500, height: 740,
     zIndex: 50, transformOrigin: "right center", backfaceVisibility: "hidden"
   });
 

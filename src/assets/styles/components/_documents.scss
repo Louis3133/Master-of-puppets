@@ -5,7 +5,7 @@
   &.hidden {
     display: none !important;
   }
-
+  font-family: $font-family-texts;
   position: fixed;
   top: 0;
   left: 0;
@@ -41,9 +41,7 @@
   h4{
     font-size: 28px;
   }
-  h1, h2, h3, h4{
-    font-family: $font-family-headings;
-  }
+
 
   .folder-wrapper {
     position: relative;
@@ -212,7 +210,7 @@
     }
 
     .post-it {
-      background-color: $yellow;
+      background-color: $light-yellow;
       padding: 10px;
       transform: rotate(-3deg);
       box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
