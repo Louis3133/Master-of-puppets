@@ -18,6 +18,7 @@ const documentsSection = document.getElementById('documents-section');
 const documentButtons = document.querySelectorAll('.document');
 const closeFolderBtn = document.getElementById('close-folder-btn');
 
+
 // Json fetch
 fetch('/bias.json')
   .then(response => {

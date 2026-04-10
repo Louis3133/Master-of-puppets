@@ -7,7 +7,7 @@
   <title>Master of puppets</title>
 </head>
 <script type="module" src="/src/assets/scripts/main.js"></script>
-
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <body>
   <section id="title-section" class="title-section">
@@ -364,7 +364,7 @@
       </svg>
     </div>
     <img class="main-title" src="/images/main-title.svg" alt="Masters of puppets">
-    <a class="to-board" href="#board-section">Aller vers le board</a>
+    <a class="to-board" href="#board-section">Assister à la réunion</a>
   </section>
 
 
@@ -468,10 +468,10 @@
               <img class="logo-nav-hell" src="/images/hellicon.svg">
             </div>
             <div class="navigation-hell">
-              <p>Produits</p>
+              <button id="product-button">Produits</button>
             </div>
           </div>
-          <button class="basket">
+          <button id="basket-button" class="basket">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M11.9996 4C13.7044 4 14.9802 5.122 15.4574 6.7127C15.782 7.7946 16.0292 8.9013 16.2909 10H22.4426L18.6926 20H5.30664L1.55664 10H7.70824C7.96994 8.9013 8.21724 7.7946 8.54174 6.7127C9.01894 5.122 10.2947 4 11.9996 4ZM14.2344 10H9.76474C9.99404 9.0468 10.2946 7.8299 10.4574 7.2873C10.6837 6.533 11.1738 6 11.9996 6C12.8254 6 13.3154 6.533 13.5417 7.2873C13.7045 7.8299 14.0051 9.0468 14.2344 10ZM4.44264 12L6.69264 18H17.3066L19.5566 12H16.2314C15.5681 14.1065 14.4649 16 11.9996 16C9.53424 16 8.43104 14.1065 7.76774 12H4.44264ZM9.87344 12C10.2369 13.0612 10.7575 14 11.9996 14C13.2416 14 13.7622 13.0612 14.1257 12H9.87344Z"
@@ -481,7 +481,96 @@
           </button>
         </div>
 
-        <div class="hellsite-content">
+        <div id="hellsite-basket" class="hellsite-content hidden">
+          <div class="basket-content">
+            <div class="products-list">
+              <h2>Mon panier</h2>
+              <div class="basket-item item-first">
+                <img src="/images/product-4.png">
+                <div class="basket-item-infos">
+                  <div class="basket-item-infos-top">
+                    <p class="product-name">Sac à main en cuir</p>
+                    <div class="price-button">
+                      <p>199,99€</p>
+                      <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                          <path d="M0.5 0.5L20 20M0.5 20L20 0.5" stroke="black" stroke-linecap="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="basket-item">
+                <img src="/images/product-3.png">
+                <div class="basket-item-infos">
+                  <div class="basket-item-infos-top">
+                    <p class="product-name">Trousse de voyage (cadeau supplémentaire)</p>
+                    <div class="price-button">
+                      <p>19,99€</p>
+                      <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                          <path d="M0.5 0.5L20 20M0.5 20L20 0.5" stroke="black" stroke-linecap="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="similar-articles">
+                <h3>Articles similaires</h3>
+                <div class="similar-list">
+                  <img src="/images/product-1.png">
+                  <img src="/images/product-2.png">
+                  <img src="/images/product-3.png">
+                  <img src="/images/product-4.png">
+                </div>
+              </div>
+            </div>
+            <div class="recap">
+              <div class="recap-content">
+                <div class="recap-top">
+                  <h3>Récapitulatif de commande</h3>
+                  <div class="recap-list">
+                    <div class="price-product">
+                      <p>Sac à main en cuir</p>
+                      <p>199,99€</p>
+                    </div>
+                    <div class="price-product">
+                      <p>TTC</p>
+                      <p>48,68€</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="recap-bottom">
+                  <p>Total</p>
+                  <p>249€</p>
+                </div>
+              </div>
+              <div class="donation-content">
+                <div class="donation-top">
+                  <p>Votre contribution au fonctionnement de Masters Of Puppets </p>
+                  <p class="why">Pourquoi ?</p>
+                </div>
+                <div class="donation-bottom">
+                  <button class="change-button">
+                    modifier
+                  </button>
+                  <p>4.99€</p>
+                </div>
+              </div>
+              <div class="ignore-checkbox">
+                <input id="ignore" name="ignore" type="checkbox">
+                <label for="ignore">Non, je préfère rester ignorant</label>
+              </div>
+              <button class="buy">
+                Continuer vers le paiement
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="hellsite-products" class="hellsite-content">
           <div class="content-main">
             <div class="images-section">
               <div class="images-nav">
@@ -688,7 +777,7 @@
           <div class="title-section-folder">
             <h3 id="cover-title"></h3>
           </div>
-          <img src="/public/images/top-secret.svg" alt="">
+          <img src="/images/top-secret.svg" alt="Top secret">
         </div>
 
         <div class="page page-left" id="left-content">
