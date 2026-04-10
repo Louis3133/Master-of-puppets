@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page-404 {
+  background: #03031F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content-404 {
+  background: url(/images/ticket-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-inline: 115px;
+  padding-block: 65px 89px;
+  border-radius: 24px;
+  position: relative;
+  transform: rotate(-2.577deg);
+}
+
+.content-404 p {
+  margin: 0;
+}
+
+.content-404 .error-title {
+  color: #03031F;
+  font-family: 'Satoshi', 'sans-serif';
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.content-404 .logo-404 {
+  width: 145px;
+  height: 72px;
+  margin-bottom: 25px;
+}
+
+.content-404::before {
+  content: '';
+  width: 183px;
+  height: 183px;
+  background-color: #03031F;
+  position: absolute;
+  left: -112px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.content-404::after {
+  content: '';
+  width: 183px;
+  height: 183px;
+  background-color: #03031F;
+  position: absolute;
+  right: -112px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.content-404 .suptitle-404 {
+  color: #0707D9;
+  font-family: 'Satoshi', 'sans-serif';
+  font-weight: 700;
+  font-size: 40px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 3px solid #0707D9;
+  text-transform: uppercase;
+  display: flex;
+}
+
+.content-404 .initial-price-404 {
+  color: #03031F;
+  font-family: 'Satoshi', 'sans-serif';
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.content-404 .initial-price-404 span {
+  color: #0707D9;
+  font-family: 'Satoshi', 'sans-serif';
+  font-size: 34px;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.content-404 .error-description {
+  color: #03031F;
+  font-family: 'Satoshi', 'sans-serif';
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.content-404 .main-content-404 {
+  padding-bottom: 12px;
+  border-bottom: solid #03031F 2px;
+}
+
+.back-button-404 {
+  display: flex;
+  padding: 20px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 10px;
+  background: #EACA40;
+  width: fit-content;
+  color: #03031F;
+  font-family: 'Satoshi', 'sans-serif';
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-inline: auto;
+  margin-top: 62px;
+}
