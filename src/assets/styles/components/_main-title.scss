@@ -102,3 +102,13 @@ body{
 .left-hand, .right-hand {
   will-change: transform;
 }
+
+.buttons-subtitle {
+  color: #FFF;
+  text-align: center;
+  font-family: $font-family-texts;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
