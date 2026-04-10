@@ -1,4 +1,6 @@
-@import '/src/assets/styles/config/variables';
+@use '../config' as *;
+
+
 .documents-folder {
   &.hidden {
     display: none !important;
