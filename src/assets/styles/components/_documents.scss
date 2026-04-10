@@ -49,15 +49,12 @@
     position: relative;
     width: 620px;
     height: 780px;
-    background-image: url(/public/images/folder.svg);
+    background-image: url(/images/folder.svg);
     background-size: 100%;
     background-position: left top;
     background-repeat: no-repeat;
     transform-style: preserve-3d;
     will-change: width, transform;
-
-    // GSAP will handle y, rotation, opacity on enter/exit
-    // so we don't set them here — letting JS own those properties
   }
 
   .page {
@@ -75,7 +72,7 @@
   .page-left {
     right: 620px;
     opacity: 0;
-    background-image: url(/public/images/left-paper-bg.svg);
+    background-image: url(/images/left-paper-bg.svg);
     background-size: cover;
   }
 
@@ -83,7 +80,7 @@
     right: 90px;
     transform-origin: left center;
     will-change: transform;
-    background-image: url(/public/images/right-paper-bg.svg);
+    background-image: url(/images/right-paper-bg.svg);
     background-size: cover;
   }
 
@@ -93,7 +90,7 @@
     right: 0;
     width: 620px;
     height: 100%;
-    background-image: url(/public/images/cover-folder.svg);
+    background-image: url(/images/cover-folder.svg);
     background-size: cover;
     z-index: 100;
     display: flex;
@@ -108,7 +105,7 @@
   }
 
   .title-section-folder{
-    background-image: url(/public/images/cover-title.svg);
+    background-image: url(/images/cover-title.svg);
     background-size: contain;
     background-repeat: no-repeat;
     width: 300px;
