@@ -1,7 +1,349 @@
 @use '../config' as *;
 
-.popup {
-  background-color: white;
+.popup-navigation1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  button {
+    color: $dark;
+    background-color: transparent;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: $white;
+    width: auto;
+    height: 40px;
+  }
+
+  svg {
+    color: $white;
+  }
+}
+
+.popup-1 {
   padding: 20px;
   position: absolute;
+  z-index: 10;
+
+  .popup-image-1 {
+    width: auto;
+    height: 450px;
+  }
+}
+
+.popup-form1 {
+  position: absolute;
+  bottom: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+
+  input[type="email"] {
+    padding: 12px 15px;
+    font-size: 12px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  input[type="email"]::placeholder {
+    color: $dark;
+    font-weight: bold;
+    font-family: $font-family-texts;
+    font-size: 12px;
+  }
+}
+
+.popup-submit1 {
+  position: absolute;
+  bottom: 13%;
+  padding: 12px 15px;
+  font-size: 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #3D51FF;
+  color: $white;
+  cursor: pointer;
+  width: 50%;
+  height: auto;
+  font-family: $font-family-texts;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.popup-content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-2 {
+  padding: 20px;
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+
+  .popup-image-2 {
+    display: block;
+    width: auto;
+    height: 450px;
+  }
+}
+
+.popup-navigation2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  button {
+    color: $dark;
+    background-color: transparent;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: $white;
+    width: auto;
+    height: 40px;
+    z-index: 10;
+  }
+}
+
+.popup-submit2 {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 75px;
+  font-size: 14px;
+  border-radius: 25px;
+  background-color: #3D51FF;
+  color: $white;
+  cursor: pointer;
+  width: auto;
+  text-decoration: none;
+  text-align: center;
+  font-family: $font-family-texts;
+  white-space: nowrap;
+}
+
+.popup-content2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-3 {
+  padding: 20px;
+  display: inline-block;
+  position: absolute;
+
+  .popup-image-3 {
+    width: auto;
+    height: 450px;
+  }
+}
+
+.popup-navigation3 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  button {
+    color: $dark;
+    background-color: transparent;
+    position: absolute;
+    top: 10%;
+    right: 12%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: $white;
+    width: auto;
+    height: 40px;
+    z-index: 10;
+  }
+
+  svg {
+    color: #680CF5;
+  }
+}
+
+.popup-submit3 {
+  position: absolute;
+  bottom: 12%;
+  left: 49%;
+  transform: translateX(-50%);
+  padding: 12px 75px;
+  font-size: 14px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #A870FF 0%, #6A23D7 100%);
+  color: $white;
+  cursor: pointer;
+  width: 40%;
+  text-decoration: none;
+  text-align: center;
+  font-family: $font-family-texts;
+  white-space: nowrap;
+}
+
+.popup-content3 {
+  position: absolute;
+  width: auto;
+  height: 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-4 {
+  padding: 20px;
+  position: absolute;
+
+  .popup-image-4 {
+    width: auto;
+    height: 450px;
+  }
+}
+
+.popup-navigation4 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  button {
+    color: $dark;
+    background-color: transparent;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: $white;
+    width: auto;
+    height: 40px;
+  }
+
+  svg {
+    color: #E53837;
+  }
+}
+
+.popup-navigation5 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  button {
+    color: $dark;
+    background-color: transparent;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: $white;
+    width: auto;
+    height: 40px;
+  }
+
+  svg {
+    color: #E53837;
+  }
+}
+
+.popup-5 {
+  padding: 20px;
+  position: absolute;
+  z-index: 10;
+
+  .popup-image-5 {
+    width: auto;
+    height: 450px;
+  }
+}
+
+.popup-form5 {
+  position: absolute;
+  bottom: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+
+  input[type="email"] {
+    padding: 10px 40px;
+    font-size: 12px;
+    border: 1px solid transparent;
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  input[type="email"]::placeholder {
+    color: #85888A;
+    font-family: $font-family-texts;
+    font-size: 12px;
+  }
+}
+
+.popup-submit5 {
+  position: absolute;
+  bottom: 13%;
+  padding: 10px 40px;
+  font-size: 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: #FE4E4E;
+  color: $white;
+  cursor: pointer;
+  width: 50%;
+  height: auto;
+  font-family: $font-family-texts;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.popup-content5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
