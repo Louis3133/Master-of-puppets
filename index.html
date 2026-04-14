@@ -366,7 +366,7 @@
     <img class="main-title" src="/images/main-title.svg" alt="Masters of puppets">
     <div class="buttons-subtitle">
       <h2>Infiltrez les plus grands méchants du marketing</h2>
-      <a class="to-board" href="#board-section">Assister à la réunion</a>
+      <a aria-label="Accéder au contenu principal" class="to-board" href="#board-section">Assister à la réunion</a>
     </div>
 
   </section>
@@ -374,9 +374,9 @@
 
   <section id="board-section" class="board-section">
     <div class="board-content">
-      <a aria-label="Back to the main title" href="#title-section" class="door"></a>
+      <a aria-label="Retour à l'écran titre" href="#title-section" class="door"></a>
       <div class="desk">
-        <img id="popupButton" class="button-popups" src="/images/button.svg">
+        <img alt="Ne surtout pas appuyer !" id="popupButton" class="button-popups" src="/images/button.svg">
         <div id="open-website" class="computer haloPC"></div>
       </div>
       <img class="screen" src="/images/screen.svg">
@@ -385,103 +385,113 @@
 
       <button class="chest haloCasier"></button>
       <div class="directory">
-          <img src="/images/back-directory.svg" class="bg-back" alt="arrière du dossier">
+        <img src="/images/back-directory.svg" class="bg-back" alt="arrière du dossier">
 
-          <div class="folder-stack">
-            <div class="folder">
-              <div class="picture picture1">
-                <img src="images/jack.svg" alt="photo de Jack Pot">
+        <div class="folder-stack">
+          <div class="folder">
+            <div class="picture picture1">
+              <img src="images/jack.svg" alt="photo de Jack Pot">
 
-                <div class="folder-text">
-                  <img src="/public/images/folder-text.svg" alt="support texte">
-                  <p>Il considère l'humain comme une simple machine biologique programmable, un assemblage de réflexes qu'il se fait un plaisir de court-circuiter pour transformer le libre arbitre en automatisme d'achat.</p>
-                </div>
-              </div>
-              <img src="/images/top-directory.svg" alt="fichier du dossier">
-              <div class="label-folder">
-                <span>Jack Pot</span>
-                <p>Perception de l'acheteur</p>
+              <div class="folder-text">
+                <img src="/public/images/folder-text.svg" alt="support texte">
+                <p>Il considère l'humain comme une simple machine biologique programmable, un assemblage de réflexes
+                  qu'il se fait un plaisir de court-circuiter pour transformer le libre arbitre en automatisme d'achat.
+                </p>
               </div>
             </div>
-
-            <div class="folder">
-              <div class="picture picture2">
-                <img src="images/max.svg" alt="photo de Max Cash">
-
-                <div class="folder-text">
-                  <img src="/public/images/folder-text.svg" alt="support texte">
-                  <p>Il agite des promesses de richesses et des compteurs de stock factices pour plonger ses proies dans un état de panique irrationnelle, les forçant à saisir une 'opportunité' qui n'existe que dans son dossier.</p>
-                </div>
-              </div>
-              <img src="/images/top-directory.svg" alt="fichier du dossier">
-              <div class="label-folder">
-                <span>Max Cash</span>
-                <p>Appât du gain</p>
-              </div>
-            </div>
-
-            <div class="folder">
-              <div class="picture picture3">
-                <img src="images/elon.svg" alt="photo d'Elon Must">
-                <div class="folder-text">
-                  <img src="/public/images/folder-text.svg" alt="support texte">
-                  <p>ll concocte des labyrinthes numériques invisibles où l'entrée est un tapis rouge et la sortie un mur de ronces, s'assurant que chaque utilisateur laisse derrière lui une trace indélébile de sa vie privée avant de pouvoir s'échapper.</p>
-                </div>
-              </div>
-              <img src="/images/top-directory.svg" alt="fichier du dossier">
-              <div class="label-folder">
-                <span>Elon Must</span>
-                <p>Rétention des utilisateurs</p>
-              </div>
-            </div>
-
-            <div class="folder">
-              <div class="picture picture4">
-                <img src="images/justin.svg" alt="photo de Justin fluence">
-                <div class="folder-text">
-                  <img src="/public/images/folder-text.svg" alt="support texte">
-                  <p>Il ne s'attaque pas au portefeuille, mais directement au système nerveux. C'est l'expert qui transforme les failles de l'évolution humaine en leviers de profit.</p>
-                </div>
-              </div>
-              <img src="/images/top-directory.svg" alt="fichier du dossier">
-              <div class="label-folder">
-                <span>Justin Fluence</span>
-                <p>Les biais cognitifs</p>
-              </div>
-            </div>
-
-            <div class="folder">
-              <div class="picture picture5">
-                <img src="images/antoine.svg" alt="photo d'Antoine Pic-sous">
-                <div class="folder-text">
-                  <img src="/public/images/folder-text.svg" alt="support texte">
-                  <p>Il attend que l'acheteur soit au bout de sa résistance nerveuse pour glisser discrètement des frais additionnels et des options forcées dans l'ombre du panier final.</p>
-                </div>
-              </div>
-              <img src="/images/top-directory.svg" alt="fichier du dossier">
-              <div class="label-folder">
-                <span>Antoine Pic-sous</span>
-                <p>Dépenses dissumilées</p>
-              </div>
-            </div>
-
-            <div class="folder">
-              <div class="picture picture6">
-                <img src="images/stephane.svg" alt="photo de Stephane Carfive">
-                <div class="folder-text">
-                  <img src="/public/images/folder-text.svg" alt="support texte">
-                  <p>Il ne fixe pas des prix, il sculpte la réalité : en utilisant des leurres et des comparaisons truquées, il parvient à faire passer un montant exorbitant pour une économie indispensable aux yeux de sa victime.</p>
-                </div>
-              </div>
-              <img src="/images/top-directory.svg" alt="fichier du dossier">
-              <div class="label-folder">
-                <span>Stéphane Carfive</span>
-                <p>Influence du prix</p>
-              </div>
+            <img src="/images/top-directory.svg" alt="fichier du dossier">
+            <div class="label-folder">
+              <span>Jack Pot</span>
+              <p>Perception de l'acheteur</p>
             </div>
           </div>
-          <img src="/images/door-directory.svg" class="door-front" alt="tiroir du dossier">
+
+          <div class="folder">
+            <div class="picture picture2">
+              <img src="images/max.svg" alt="photo de Max Cash">
+
+              <div class="folder-text">
+                <img src="/public/images/folder-text.svg" alt="support texte">
+                <p>Il agite des promesses de richesses et des compteurs de stock factices pour plonger ses proies dans
+                  un état de panique irrationnelle, les forçant à saisir une 'opportunité' qui n'existe que dans son
+                  dossier.</p>
+              </div>
+            </div>
+            <img src="/images/top-directory.svg" alt="fichier du dossier">
+            <div class="label-folder">
+              <span>Max Cash</span>
+              <p>Appât du gain</p>
+            </div>
+          </div>
+
+          <div class="folder">
+            <div class="picture picture3">
+              <img src="images/elon.svg" alt="photo d'Elon Must">
+              <div class="folder-text">
+                <img src="/public/images/folder-text.svg" alt="support texte">
+                <p>ll concocte des labyrinthes numériques invisibles où l'entrée est un tapis rouge et la sortie un mur
+                  de ronces, s'assurant que chaque utilisateur laisse derrière lui une trace indélébile de sa vie privée
+                  avant de pouvoir s'échapper.</p>
+              </div>
+            </div>
+            <img src="/images/top-directory.svg" alt="fichier du dossier">
+            <div class="label-folder">
+              <span>Elon Must</span>
+              <p>Rétention des utilisateurs</p>
+            </div>
+          </div>
+
+          <div class="folder">
+            <div class="picture picture4">
+              <img src="images/justin.svg" alt="photo de Justin fluence">
+              <div class="folder-text">
+                <img src="/public/images/folder-text.svg" alt="support texte">
+                <p>Il ne s'attaque pas au portefeuille, mais directement au système nerveux. C'est l'expert qui
+                  transforme les failles de l'évolution humaine en leviers de profit.</p>
+              </div>
+            </div>
+            <img src="/images/top-directory.svg" alt="fichier du dossier">
+            <div class="label-folder">
+              <span>Justin Fluence</span>
+              <p>Les biais cognitifs</p>
+            </div>
+          </div>
+
+          <div class="folder">
+            <div class="picture picture5">
+              <img src="images/antoine.svg" alt="photo d'Antoine Pic-sous">
+              <div class="folder-text">
+                <img src="/public/images/folder-text.svg" alt="support texte">
+                <p>Il attend que l'acheteur soit au bout de sa résistance nerveuse pour glisser discrètement des frais
+                  additionnels et des options forcées dans l'ombre du panier final.</p>
+              </div>
+            </div>
+            <img src="/images/top-directory.svg" alt="fichier du dossier">
+            <div class="label-folder">
+              <span>Antoine Pic-sous</span>
+              <p>Dépenses dissumilées</p>
+            </div>
+          </div>
+
+          <div class="folder">
+            <div class="picture picture6">
+              <img src="images/stephane.svg" alt="photo de Stephane Carfive">
+              <div class="folder-text">
+                <img src="/public/images/folder-text.svg" alt="support texte">
+                <p>Il ne fixe pas des prix, il sculpte la réalité : en utilisant des leurres et des comparaisons
+                  truquées, il parvient à faire passer un montant exorbitant pour une économie indispensable aux yeux de
+                  sa victime.</p>
+              </div>
+            </div>
+            <img src="/images/top-directory.svg" alt="fichier du dossier">
+            <div class="label-folder">
+              <span>Stéphane Carfive</span>
+              <p>Influence du prix</p>
+            </div>
+          </div>
         </div>
+        <img src="/images/door-directory.svg" class="door-front" alt="tiroir du dossier">
+      </div>
 
       <div class="board-table">
         <img class="table" src="/images/evil-board.png">
@@ -602,7 +612,7 @@
                 </div>
               </div>
 
-              <div class="basket-item">
+              <div id="TaxeBiaisSurprise" class="basket-item hidden">
                 <img src="/images/product-3.png">
                 <div class="basket-item-infos">
                   <div class="basket-item-infos-top">
@@ -630,7 +640,7 @@
                     </div>
                     <div class="price-product">
                       <p>TTC</p>
-                      <p >48,68€</p>
+                      <p>48,68€</p>
                     </div>
                   </div>
                 </div>
@@ -639,23 +649,23 @@
                   <p>249€</p>
                 </div>
               </div>
-              <div class="donation-content">
-                <div class="donation-top">
-                  <p>Votre contribution au fonctionnement de Masters Of Puppets </p>
-                  <p class="why">Pourquoi ?</p>
+              <div id="donateAndCheckbox" class="hidden donate-and-checkbox">
+                <div id="donationContainer" class="donation-content">
+                  <div class="donation-top">
+                    <p>Votre contribution au fonctionnement de Masters Of Puppets </p>
+                    <p class="why">Pourquoi ?</p>
+                  </div>
+                  <div class="donation-bottom">
+                    <p>4.99€</p>
+                  </div>
                 </div>
-                <div class="donation-bottom">
-                  <button class="change-button">
-                    modifier
-                  </button>
-                  <p>4.99€</p>
+                <div class="ignore-checkbox">
+                  <input id="ignore" name="ignore" type="checkbox">
+                  <label for="ignore">Non, je préfère rester ignorant</label>
                 </div>
               </div>
-              <div class="ignore-checkbox">
-                <input id="ignore" name="ignore" type="checkbox">
-                <label for="ignore">Non, je préfère rester ignorant</label>
-              </div>
-              <button id class="buy">
+
+              <button id="buyButton" class="buy">
                 Continuer vers le paiement
               </button>
             </div>
@@ -689,15 +699,15 @@
                 </div>
                 <p id="stressBiaisLimite" class="limited-offer hidden">Offre à durée limitée</p>
                 <div id="ancrageBiais">
-                <div class="prices-informations">
-                <p class="promo-percentage ancrage-infos hidden">-50%</p>
-                <p data-prix="200.00" class="price prixArrondi">200€</p>
-                <p class="lined-price ancrage-infos hidden">4OO€</p>
-                </div>
-                <div class="economy ancrage-infos hidden">
-                  <p>Prix le plus bas des 30 derniers jours : 400€</p>
-                  <p>Économisez : 200€</p>
-                </div>
+                  <div class="prices-informations">
+                    <p class="promo-percentage ancrage-infos hidden">-50%</p>
+                    <p data-prix="200.00" class="price prixArrondi">200€</p>
+                    <p class="lined-price ancrage-infos hidden">4OO€</p>
+                  </div>
+                  <div class="economy ancrage-infos hidden">
+                    <p>Prix le plus bas des 30 derniers jours : 400€</p>
+                    <p>Économisez : 200€</p>
+                  </div>
                 </div>
               </div>
 
@@ -733,12 +743,8 @@
                 </div>
 
                 <div class="buttons-bottom">
-                  <div class="quantity">
-                    <button>-</button>
-                    <p>1</p>
-                    <button>+</button>
-                  </div>
-                  <button class="add-basket">Ajouter au panier</button>
+
+                  <button id="addBucket" class="add-basket ">Ajouter au panier</button>
                 </div>
               </div>
             </div>
@@ -750,21 +756,20 @@
                 le 26 est un modèle compact avec deux bandoulières amovibles pour un porté à la main, à l’épaule ou
                 croisé.</p>
               <div class="specs">
-                <div class="spec-produc-item"><span class="spec-product-category">Matériaux</span><p id="negatif1">Simili cuir, Doublure en daim synthétique</p></div>
-                <div class="spec-produc-item"><span class="spec-product-category">Caractéristiques</span><p id="negatif2">Poche avec fermeture éclair à l’intérieur.</p></div>
-                <div class="spec-produc-item"><span class="spec-product-category">Origine</span><p id="negatif3">Made in China</p></div>
+                <div class="spec-produc-item"><span class="spec-product-category">Matériaux</span>
+                  <p id="negatif1">Simili cuir, Doublure en daim synthétique</p>
+                </div>
+                <div class="spec-produc-item"><span class="spec-product-category">Caractéristiques</span>
+                  <p id="negatif2">Poche avec fermeture éclair à l’intérieur.</p>
+                </div>
+                <div class="spec-produc-item"><span class="spec-product-category">Origine</span>
+                  <p id="negatif3">Made in China</p>
+                </div>
               </div>
             </div>
             <div class="labels-multiple">
               <div class="multiples-buy">
-                <button class="multiple-buttons">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M11.9996 4C13.7044 4 14.9802 5.122 15.4574 6.7127C15.782 7.7946 16.0292 8.9013 16.2909 10H22.4426L18.6926 20H5.30664L1.55664 10H7.70824C7.96994 8.9013 8.21724 7.7946 8.54174 6.7127C9.01894 5.122 10.2947 4 11.9996 4ZM14.2344 10H9.76474C9.99404 9.0468 10.2946 7.8299 10.4574 7.2873C10.6837 6.533 11.1738 6 11.9996 6C12.8254 6 13.3154 6.533 13.5417 7.2873C13.7045 7.8299 14.0051 9.0468 14.2344 10ZM4.44264 12L6.69264 18H17.3066L19.5566 12H16.2314C15.5681 14.1065 14.4649 16 11.9996 16C9.53424 16 8.43104 14.1065 7.76774 12H4.44264ZM9.87344 12C10.2369 13.0612 10.7575 14 11.9996 14C13.2416 14 13.7622 13.0612 14.1257 12H9.87344Z"
-                      fill="#5D5D5D" />
-                  </svg>
-                  Payez en plusieurs fois
-                </button>
+
               </div>
               <div id="fakeLabels" class="fake-labels hidden">
                 <div class="bad-label modetik">
@@ -856,6 +861,10 @@
                   <input id="misdirection_esthetique" type="checkbox">
                   <label for="misdirection_esthetique"> Misdirection Esthétique </label>
                 </div>
+                <div class="menuDeroulantCheckbox">
+                  <input id="taxe_epuisement" type="checkbox">
+                  <label for="taxe_epuisement"> Taxe d'Épuisement </label>
+                </div>
               </div>
             </div>
           </div>
@@ -888,24 +897,13 @@
 
       </div>
     </div>
-
     </div>
     </div>
-
-
     </div>
-
-
   </section>
-
-
   <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
   <script src="https://assets.codepen.io/16327/InertiaPlugin.min.js"></script>
-
-
-
-
 </body>
 
 </html>
