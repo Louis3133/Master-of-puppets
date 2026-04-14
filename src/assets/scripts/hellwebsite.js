@@ -15,6 +15,22 @@ autoriteCheckbox.addEventListener("click", () => {
   }
 });
 
+// Taxe d'épuisement
+
+const TaxeCheckbox = document.getElementById("taxe_epuisement");
+const TaxeBiaisDonation = document.getElementById("donateAndCheckbox");
+const TaxeBiaisSurprise = document.getElementById("TaxeBiaisSurprise");
+
+TaxeCheckbox.addEventListener("click", () => {
+  if (TaxeCheckbox.checked) {
+    TaxeBiaisDonation.classList.toggle('hidden');
+    TaxeBiaisSurprise.classList.toggle('hidden');
+  } else {
+    TaxeBiaisDonation.classList.toggle('hidden');
+    TaxeBiaisSurprise.classList.toggle('hidden');
+  }
+});
+
 // Gambling
 
 const gamblingCheckbox = document.getElementById("gambler");
@@ -25,6 +41,23 @@ gamblingCheckbox.addEventListener("click", () => {
     gamblingBiais.classList.toggle('hidden');
   } else {
     gamblingBiais.classList.toggle('hidden');
+  }
+});
+
+// Missdirection
+
+const misdirectionEsthetiqueCheckbox = document.getElementById("misdirection_esthetique");
+const bucketAddButton = document.getElementById("addBucket");
+const buyButton = document.getElementById("buyButton");
+
+
+misdirectionEsthetiqueCheckbox.addEventListener("click", () => {
+  if (misdirectionEsthetiqueCheckbox.checked) {
+    bucketAddButton.classList.toggle('primarised');
+    buyButton.classList.toggle('primarised');
+  } else {
+    bucketAddButton.classList.toggle('primarised');
+    buyButton.classList.toggle('primarised');
   }
 });
 
@@ -173,7 +206,6 @@ ancrageCheckbox.addEventListener("click", () => {
 
 // Misdirection Esthétique
 
-const misdirectionEsthetiqueCheckbox = document.getElementById("misdirection_esthetique");
 const confirmerButton = document.querySelectorAll(".confirmer");
 const annulerButton = document.querySelectorAll(".annuler");
 misdirectionEsthetiqueCheckbox.addEventListener("click", () => {

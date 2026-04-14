@@ -83,6 +83,7 @@ $transition-speed: 0.3s;
     gap: 24px;
     align-items: center;
     position: relative;
+    display: none;
 
     .close-menu {
       top: 24px;
@@ -91,6 +92,7 @@ $transition-speed: 0.3s;
     }
 
     &.visible {
+      display: block;
         max-height: 500px;
         transform: translateY(-100%);
         pointer-events: auto;

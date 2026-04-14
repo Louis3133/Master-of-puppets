@@ -6,7 +6,14 @@ const productButton = document.getElementById('product-button');
 const pageProducts = document.getElementById('hellsite-products');
 const pageBasket = document.getElementById('hellsite-basket');
 
+const addBucket = document.getElementById('addBucket');
+
 basketButton.addEventListener('click', () => {
+  pageProducts.classList.toggle('hidden');
+  pageBasket.classList.toggle('hidden');
+})
+
+addBucket.addEventListener('click', () => {
   pageProducts.classList.toggle('hidden');
   pageBasket.classList.toggle('hidden');
 })
@@ -24,3 +31,14 @@ littleImages.forEach(img => {
     img.classList.add('active');
   });
 });
+
+const ignorecheckbox = document.getElementById('ignore');
+const donationContainer  = document.getElementById('donationContainer');
+
+ignorecheckbox.addEventListener('click', () => {
+  if (ignorecheckbox.checked) {
+    donationContainer.classList.toggle('hidden');
+  } else {
+    donationContainer.classList.toggle('hidden');
+  }
+})
